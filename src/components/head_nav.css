@@ -1,7 +1,6 @@
 nav {
-    background-color: rgba(38, 15, 48, 0.85);
-    border-bottom: 2px solid #C99700;
-    border-top: 2px solid #C99700;
+    background-color: transparent;
+    display: inline;
 }
 
 nav a img {
