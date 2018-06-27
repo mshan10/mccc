@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadNav from './components/head_nav';
+import Navbar from './components/navbar';
 import Home from './components/home';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ class App extends Component {
     return (
         <BrowserRouter>
             <div className="App">
-                <HeadNav />
+                <Navbar />
                 <Home />
             </div>
         </BrowserRouter>
