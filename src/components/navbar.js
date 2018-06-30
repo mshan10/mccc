@@ -9,13 +9,10 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import { Manager, Target, Popper } from 'react-popper';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Collapse from '@material-ui/core/Collapse';
+import MenuList from '@material-ui/core/MenuList';
 import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
-import Portal from '@material-ui/core/Portal';
-import MenuList from '@material-ui/core/MenuList';
+import Popover from '@material-ui/core/Popover';
 import './navbar.css';
 
 const styles = theme => ({
@@ -36,78 +33,71 @@ const styles = theme => ({
             color: 'white',
         },
     },
+    nav: {
+        backgroundColor: 'rgba(90, 90, 90, 0.4)',
+    }
 });
 
-class MenuListComposition extends React.Component {
-  state = {
-    open: false,
-  };
-
-  handleToggle = () => {
-    this.setState(state => ({ open: !state.open }));
-  };
-
-  handleClose = event => {
-    if (this.target1.contains(event.target) || this.target2.contains(event.target)) {
-      return;
+class Navbar extends React.Component {
+    state = {
+        anchorEl: null,
     }
+    handleClick = event => {
+        this.setState({ anchorEl: event.currentTarget });
+    };
 
-    this.setState({ open: false });
-  };
+    handleClose = () => {
+        this.setState({ anchorEl: null });
+    };
 
-const Navbar = (props) => {
-    const { classes } = this.props;
-    const { open } = this.state;
-    return (
+    render() {
+        const { anchorEl } = this.state;
+
+        const { classes } = this.props;
+
+        return (
         <div className={classes.root}>
-            <AppBar position="fixed">
+            <AppBar position="fixed" className={classes.nav}>
                 <Toolbar>
                     <Link to="/"><img src="./favicon.png" alt="logo" /></Link>
                     <Typography variant="title" color="inherit" className={classes.flex}>
                         MCCC
                     </Typography>
-                    <Manager>
-                      <Target>
-                        <div
-                          ref={node => {
-                            this.target1 = node;
-                          }}
-                        >
-                          <Button
-                            aria-owns={open ? 'menu-list-grow' : null}
-                            aria-haspopup="true"
-                            onClick={this.handleToggle}
-                          >
-                            Toggle Menu Grow
-                          </Button>
-                        </div>
-                      </Target>
-                      <Popper
-                        placement="bottom-start"
-                        eventsEnabled={open}
-                        className={classNames({ [classes.popperClose]: !open })}
-                      >
-                        <ClickAwayListener onClickAway={this.handleClose}>
-                          <Grow in={open} id="menu-list-grow" style={{ transformOrigin: '0 0 0' }}>
-                            <Paper>
-                              <MenuList role="menu">
-                                <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                                <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                                <MenuItem onClick={this.handleClose}>Logout</MenuItem>
-                              </MenuList>
-                            </Paper>
-                          </Grow>
-                        </ClickAwayListener>
-                      </Popper>
-                    </Manager>
-                    <Button className={classNames(classes.button, classes.cssRoot)}>About Us</Button>
+                    <Button
+                        className={classNames(classes.button)}
+                        aria-owns={anchorEl ? 'simple-menu' : null}
+                        anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                        aria-haspopup="true"
+                        onClick={this.handleClick}
+                    >
+                    About Us
+                    </Button>
+                    <Popover
+                        open={Boolean(anchorEl)}
+                        anchorEl={anchorEl}
+                        onClose={this.handleClose}
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }}
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                        }}
+                    >
+                      <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                      <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                      <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+                    </Popover>
                     <Button className={classes.button}>Events</Button>
                     <Button variant="contained" color="primary" className={classes.button}>Contact</Button>
 
                 </Toolbar>
             </AppBar>
         </div>
-    );
+        );
+    }
+
 }
 Navbar.propTypes = {
   classes: PropTypes.object.isRequired,

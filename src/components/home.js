@@ -4,7 +4,7 @@ import './home.css';
 
 const Home = () => {
     return (
-        <div class="home">
+        <div className="home">
             <h1>Welcome to MCCC<br />Michiana Chinese Christian Church</h1>
         </div>
     );
