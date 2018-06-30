@@ -25,16 +25,25 @@ const styles = theme => ({
         fontFamily: 'Lato',
         letterSpacing: 1.5,
     },
+    title: {
+        // transform: 'scale(.7,1)',
+    },
     button: {
         margin: theme.spacing.unit,
     },
     cssRoot: {
+        backgroundColor: '#ffc952',
         '&:hover': {
-            color: 'white',
+            backgroundColor: '#ff7473',
+        },
+    },
+    menuButton: {
+        '&:hover': {
+            backgroundColor: '#423e61'
         },
     },
     nav: {
-        backgroundColor: 'rgba(90, 90, 90, 0.4)',
+        backgroundColor: 'rgba(52, 49, 76, 0.4)',
     }
 });
 
@@ -60,11 +69,11 @@ class Navbar extends React.Component {
             <AppBar position="fixed" className={classes.nav}>
                 <Toolbar>
                     <Link to="/"><img src="./favicon.png" alt="logo" /></Link>
-                    <Typography variant="title" color="inherit" className={classes.flex}>
+                    <Typography variant="title" color="inherit" className={classNames(classes.flex, classes.title)}>
                         MCCC
                     </Typography>
                     <Button
-                        className={classNames(classes.button)}
+                        className={classNames(classes.button, classes.menuButton)}
                         aria-owns={anchorEl ? 'simple-menu' : null}
                         anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
                         aria-haspopup="true"
@@ -89,8 +98,33 @@ class Navbar extends React.Component {
                       <MenuItem onClick={this.handleClose}>My account</MenuItem>
                       <MenuItem onClick={this.handleClose}>Logout</MenuItem>
                     </Popover>
-                    <Button className={classes.button}>Events</Button>
-                    <Button variant="contained" color="primary" className={classes.button}>Contact</Button>
+                    <Button
+                        className={classNames(classes.button, classes.menuButton)}
+                        aria-owns={anchorEl ? 'simple-menu' : null}
+                        anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                        aria-haspopup="true"
+                        onClick={this.handleClick}
+                    >
+                    Programs
+                    </Button>
+                    <Popover
+                        open={Boolean(anchorEl)}
+                        anchorEl={anchorEl}
+                        onClose={this.handleClose}
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }}
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                        }}
+                    >
+                      <MenuItem onClick={this.handleClose}>Profile</MenuItem>
+                      <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                      <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+                    </Popover>
+                    <Button variant="contained" color="primary" className={classNames(classes.button, classes.cssRoot)}>Contact</Button>
 
                 </Toolbar>
             </AppBar>
