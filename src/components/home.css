@@ -2,7 +2,7 @@
     color: #fff;
     font-family: 'Lato';
 }
-.home {
+.header {
     background-image: linear-gradient(to bottom, rgba(255, 201, 82,.1), rgba(52, 49, 76,.3)), url(../img/building.jpg);
     background-size: cover;
     background-position: center;
@@ -10,10 +10,12 @@
     background-attachment: fixed;
 }
 
-h1 {
-    padding: 150px 100px;
-    font-weight: 400;
-    font-size: 55px;
-    transform: scale(1,1.3);
-    letter-spacing: 1.5px;
+
+h3::first-letter {
+    color: #ff7473;
+    font-size: 60px;
+    transform: 'scale(1,1.3)',
+}
+.section {
+    padding: 50px 0;
 }
