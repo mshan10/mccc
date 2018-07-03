@@ -55,8 +55,7 @@ const styles = theme => ({
         fontFamily: 'Ubuntu',
     },
     list: {
-        paddingBottom: 0,
-        paddingTop: 0,
+        padding: '0 20px',
         color: '#47b8e0',
 
     },
@@ -65,7 +64,7 @@ const styles = theme => ({
     },
     icon: {
         color: '#47b8e0',
-        marginRight: 5,
+        marginRight: 7,
     }
 });
 
@@ -115,26 +114,58 @@ class Home extends React.Component {
                             </Grid>
                             <Grid item md={6}>
                             <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
-                              <ExpansionPanelSummary>
-                                <Typography className={classes.heading}>English Schedule</Typography>
-                              </ExpansionPanelSummary>
-                              <ExpansionPanelDetails>
-                                <Typography>
-                                  Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
-                                  maximus est, id dignissim quam.
-                                </Typography>
-                              </ExpansionPanelDetails>
+                                <ExpansionPanelSummary>
+                                    <Typography className={classes.heading}>English Schedule</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Grid container>
+                                        <Grid item md={7}>
+                                            <List dense="true">
+                                                <ListItem className={classes.list}>English Sunday School</ListItem>
+                                                <ListItem className={classes.list}>English Worship</ListItem>
+                                                <ListItem className={classes.list}>Fellowship Lunch</ListItem>
+                                                <ListItem className={classes.list}>Choir</ListItem>
+                                                <ListItem className={classes.list}>Sports</ListItem>
+                                            </List>
+                                        </Grid>
+                                        <Grid item md={5}>
+                                            <List dense="true">
+                                                <ListItem className={classes.list}>10:00 A.M.</ListItem>
+                                                <ListItem className={classes.list}>11:30 A.M.</ListItem>
+                                                <ListItem className={classes.list}>12:30 P.M.</ListItem>
+                                                <ListItem className={classes.list}>1:30 P.M.</ListItem>
+                                                <ListItem className={classes.list}>2:00 P.M.</ListItem>
+                                            </List>
+                                        </Grid>
+                                    </Grid>
+                                </ExpansionPanelDetails>
                             </ExpansionPanel>
                             <ExpansionPanel expanded={expanded === 'panel2'} onChange={this.handleChange('panel2')}>
-                              <ExpansionPanelSummary>
-                                <Typography className={classes.heading}>Chinese Schedule</Typography>
-                              </ExpansionPanelSummary>
-                              <ExpansionPanelDetails>
-                                <Typography>
-                                  Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar
-                                  diam eros in elit. Pellentesque convallis laoreet laoreet.
-                                </Typography>
-                              </ExpansionPanelDetails>
+                                <ExpansionPanelSummary>
+                                    <Typography className={classes.heading}>Chinese Schedule</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Grid container>
+                                        <Grid item md={7}>
+                                            <List dense="true">
+                                                <ListItem className={classes.list}>Chinese Worship</ListItem>
+                                                <ListItem className={classes.list}>Chinese Sunday School</ListItem>
+                                                <ListItem className={classes.list}>Fellowship Lunch</ListItem>
+                                                <ListItem className={classes.list}>Choir</ListItem>
+                                                <ListItem className={classes.list}>Sports</ListItem>
+                                            </List>
+                                        </Grid>
+                                        <Grid item md={5}>
+                                            <List dense="true">
+                                                <ListItem className={classes.list}>10:00 A.M.</ListItem>
+                                                <ListItem className={classes.list}>11:30 A.M.</ListItem>
+                                                <ListItem className={classes.list}>12:30 P.M.</ListItem>
+                                                <ListItem className={classes.list}>1:30 P.M.</ListItem>
+                                                <ListItem className={classes.list}>2:00 P.M.</ListItem>
+                                            </List>
+                                        </Grid>
+                                    </Grid>
+                                </ExpansionPanelDetails>
                             </ExpansionPanel>
 
 
