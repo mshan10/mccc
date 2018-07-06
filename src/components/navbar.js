@@ -22,7 +22,9 @@ const styles = theme => ({
         letterSpacing: 1.5,
     },
     title: {
-        // transform: 'scale(.7,1)',
+        transform: 'scaleY(1.3)',
+        fontFamily: 'Lato',
+        fontWeight: 600,
     },
     button: {
         margin: theme.spacing.unit,

@@ -41,6 +41,8 @@ const styles = theme => ({
         paddingTop: 5,
         paddingBottom: 15,
         textTransform: 'capitalize',
+        fontSize: 25,
+
     },
     title: {
         fontWeight: 300,
@@ -49,10 +51,14 @@ const styles = theme => ({
         padding: '150px 100px',
     },
     church: {
-        fontSize: 40,
+        fontSize: 60,
         margin: 0,
-        letterSpacing: 1.5,
-        fontFamily: 'Ubuntu',
+        letterSpacing: -2,
+        fontFamily: 'Helvetica',
+        textTransform: 'uppercase',
+        fontWeight: 600,
+        transform: 'scaleY(1.3)',
+
     },
     list: {
         padding: '0 20px',
@@ -65,6 +71,28 @@ const styles = theme => ({
     icon: {
         color: '#47b8e0',
         marginRight: 7,
+    },
+    heading: {
+        color: '#ff7473',
+        fontSize: 20,
+    },
+    scheduleGrid: {
+        marginTop: 60,
+    },
+    aboutUs: {
+        fontSize: 80,
+        fontFamily: 'Helvetica',
+        textTransform: 'uppercase',
+        transform: 'scaleY(1.3)',
+        textAlign: 'center',
+        color: '#fff',
+        paddingTop: 60,
+        fontWeight: 600,
+    },
+    font: {
+        fontFamily: 'Helvetica',
+        fontWeight: 600,
+        transform: 'scaleY(1.3)',
     }
 });
 
@@ -78,9 +106,9 @@ class Home extends React.Component {
          expanded: expanded ? panel : false,
        });
      };
-    render() {
-    const { classes } = this.props;
-    const { expanded } = this.state;
+        render() {
+        const { classes } = this.props;
+        const { expanded } = this.state;
 
 
         return (
@@ -112,7 +140,7 @@ class Home extends React.Component {
                                     <ListItem className={classes.list}><FontAwesome name="far fa-church" className={classes.icon}></FontAwesome>Postlude</ListItem>
                                 </List>
                             </Grid>
-                            <Grid item md={6}>
+                            <Grid item md={6} className={classes.scheduleGrid}>
                             <ExpansionPanel expanded={expanded === 'panel1'} onChange={this.handleChange('panel1')}>
                                 <ExpansionPanelSummary>
                                     <Typography className={classes.heading}>English Schedule</Typography>
@@ -167,11 +195,42 @@ class Home extends React.Component {
                                     </Grid>
                                 </ExpansionPanelDetails>
                             </ExpansionPanel>
-
-
+                            <ExpansionPanel expanded={expanded === 'panel3'} onChange={this.handleChange('panel3')}>
+                                <ExpansionPanelSummary>
+                                    <Typography className={classes.heading}>Children Schedule</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails>
+                                    <Grid container>
+                                        <Grid item md={7}>
+                                            <List dense="true">
+                                                <ListItem className={classes.list}>Children Worship</ListItem>
+                                                <ListItem className={classes.list}>Children Sunday School</ListItem>
+                                                <ListItem className={classes.list}>Fellowship Lunch</ListItem>
+                                            </List>
+                                        </Grid>
+                                        <Grid item md={5}>
+                                            <List dense="true">
+                                                <ListItem className={classes.list}>10:00 A.M.</ListItem>
+                                                <ListItem className={classes.list}>11:30 A.M.</ListItem>
+                                                <ListItem className={classes.list}>12:30 P.M.</ListItem>
+                                                <ListItem className={classes.list}>1:30 P.M.</ListItem>
+                                                <ListItem className={classes.list}>2:00 P.M.</ListItem>
+                                            </List>
+                                        </Grid>
+                                    </Grid>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
                             </Grid>
                         </Grid>
                     </Paper>
+                </section>
+                <section className="about-us">
+                    <Typography variant="display3" className={classes.aboutUs}>About Us</Typography>
+                    <div className="about-us-box">
+                        <Typography variant="paragraph" className="about-us-text">
+                            教会2018年度春季成人主日学从本周日(11/2)开始新的课程《从圣经的教导反省埋怨的教训》。本课程将以圣经中古代以色列民在出埃及至迦南途中因埋怨而遭受上帝惩罚所付上的生命代价为教训，检视当今信徒生活、生命中因抱怨所导致的毁坏性影响；伴随本课程亦将开展“不抱怨21天手环实践”活动。
+                        </Typography>
+                    </div>
                 </section>
             </div>
         );
