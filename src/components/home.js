@@ -13,6 +13,8 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import FontAwesome from 'react-fontawesome';
+import Button from '@material-ui/core/Button';
+
 
 
 import './home.css';
@@ -73,7 +75,7 @@ const styles = theme => ({
         marginRight: 7,
     },
     heading: {
-        color: '#ff7473',
+        color: '#47b8e0',
         fontSize: 20,
     },
     scheduleGrid: {
@@ -93,6 +95,15 @@ const styles = theme => ({
         fontFamily: 'Helvetica',
         fontWeight: 600,
         transform: 'scaleY(1.3)',
+    },
+    bodyText: {
+        color: '#fff',
+    },
+    button: {
+        backgroundColor: '#ffc952',
+        '&:hover': {
+            backgroundColor: '#ffb91f',
+        }
     }
 });
 
@@ -225,11 +236,21 @@ class Home extends React.Component {
                     </Paper>
                 </section>
                 <section className="about-us">
-                    <Typography variant="display3" className={classes.aboutUs}>About Us</Typography>
+                    <Typography variant="headline" className={classes.aboutUs}>About Us</Typography>
                     <div className="about-us-box">
-                        <Typography variant="paragraph" className="about-us-text">
+                        <Typography variant="display1" className={classes.bodyText}>
                             教会2018年度春季成人主日学从本周日(11/2)开始新的课程《从圣经的教导反省埋怨的教训》。本课程将以圣经中古代以色列民在出埃及至迦南途中因埋怨而遭受上帝惩罚所付上的生命代价为教训，检视当今信徒生活、生命中因抱怨所导致的毁坏性影响；伴随本课程亦将开展“不抱怨21天手环实践”活动。
                         </Typography>
+                    </div>
+                    <Button variant="extendedFab" size="large" className={classes.button}>
+                        About US
+                    </Button>
+                </section>
+                <section>
+                    <div className="center">
+                        <h1>1</h1>
+                        <div>2</div>
+                        <div>3</div>
                     </div>
                 </section>
             </div>
