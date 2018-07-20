@@ -107,7 +107,7 @@ const styles = theme => ({
     }
 });
 
-class Home extends React.Component {
+class home extends React.Component {
     state = {
        expanded: null,
      };

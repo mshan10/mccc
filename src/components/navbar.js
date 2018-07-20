@@ -67,8 +67,8 @@ class Navbar extends React.Component {
             <AppBar position="fixed" className={classes.nav}>
                 <Toolbar>
                     <Link to="/"><img src="./favicon.png" alt="logo" /></Link>
-                    <Typography variant="title" color="inherit" className={classNames(classes.flex, classes.title)}>
-                        MCCC
+                    <Typography variant="display1" color="inherit" className={classNames(classes.flex, classes.title)}>
+                        
                     </Typography>
                     <Button
                         className={classNames(classes.button, classes.menuButton)}
