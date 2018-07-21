@@ -1,57 +1,87 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Typography, Paper, List, ListItem } from '@material-ui/core'
+import { Typography, Paper, List, ListItem, ListItemText, Grid, ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from '@material-ui/core'
+import classNames from 'classnames';
 import FontAwesome from 'react-fontawesome';
 
 
 const styles = theme => ({
+    root: {
+         ...theme.mixins.gutters(),
+         paddingTop: theme.spacing.unit * 2,
+         paddingBottom: theme.spacing.unit * 2,
+    },
     list: {
-
+        padding: '0 8%',
+        color: '#34314c',
     },
     icon: {
-
+        color: '#47b8e0',
+        marginRight: 7,
     },
+    paper: {
+        margin: '2% 15%',
+    },
+
 })
 
-// const Schedule = (procedure) => {
-//     return procedure.map(procedureItem => {
-//             <h1>HI</h1>
-//             <ListItem className={styles.list}>
-//                 <FontAwesome name="far fa-church" className={styles.icon}></FontAwesome>
-//                 procedureItem
-//             </ListItem>
-//
-//     })
-//
-// }
-
-const Procedure = [
-    'Prelude',
-    'Call to Worship',
-    'Singspiration',
-    'Pastoral Prayer',
-    'Scripture Reading',
-    'Message by Pastor',
-    'Responding Hymn',
-    'Bedediction',
-    'Welcome & Announcements',
-    'Postlude',
-]
+const Schedule = ({procedure, classes}) => {
+    return procedure.map((procedureItem, index) => {
+        return(
+            <ListItem className={classes.list} key={index}>
+                <Typography variant="subheading">{procedureItem}</Typography>
+            </ListItem>
+        )
+    })
+}
+// <FontAwesome name="far fa-church" className={classes.icon}></FontAwesome>
 
 export default withStyles(styles)(props => {
-    const { classes, Procdure } = props
+    const { classes } = props
 
     return(
         <div>
-            <Typography variant="headline">Join us for worship</Typography>
-            <List>
-                {Procedure.map((procedureItem, i) =>
-                    <ListItem className={styles.list}>
-                        <FontAwesome name="far fa-church" className={styles.icon}></FontAwesome>
-                        {procedureItem}
-                    </ListItem>
-                )}
-            </List>
+            <Typography variant="display3" className={classes.title}>Join us for worship</Typography>
+            <Paper className={classNames(classes.root, classes.paper)} elevation={5}>
+                <Grid container spacing={16} className={classes.grid}>
+                    <Grid item md={6}>
+                        <List>
+                            <Schedule
+                                procedure={['Prelude', 'Call to Worship', 'Singspiration', 'Pastoral Prayer', 'Scripture Reading', 'Message by Pastor', 'Responding Hymn', 'Bedediction', 'Welcome & Announcements', 'Postlude']}
+                                classes={classes}
+                            />
+                        </List>
+                    </Grid>
+                        <ExpansionPanel expanded='true'>
+                           <ExpansionPanelSummary>
+                               <Typography className={classes.heading}>English Schedule</Typography>
+                           </ExpansionPanelSummary>
+                           <ExpansionPanelDetails>
+                               <Grid container>
+                                   <Grid item md={7}>
+                                       <List dense="true">
+                                           <Schedule
+                                               procedure={['English Sunday School', 'English Worship', 'Fellowship Lunch', 'Choir', 'Sports']}
+                                               classes={classes}
+                                           />
+                                       </List>
+                                   </Grid>
+                                   <Grid item md={5}>
+                                       <List dense="true">
+                                           <ListItem className={classes.list}>10:00 A.M.</ListItem>
+                                           <ListItem className={classes.list}>11:30 A.M.</ListItem>
+                                           <ListItem className={classes.list}>12:30 P.M.</ListItem>
+                                           <ListItem className={classes.list}>1:30 P.M.</ListItem>
+                                           <ListItem className={classes.list}>2:00 P.M.</ListItem>
+                                       </List>
+                                   </Grid>
+                               </Grid>
+                           </ExpansionPanelDetails>
+                       </ExpansionPanel>
+                    <Grid item md={6}>
+                    </Grid>
+                </Grid>
+            </Paper>
         </div>
     )
 })
