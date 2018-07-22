@@ -117,7 +117,12 @@ export default withStyles(styles)(class extends Component {
                     <Paper className={classNames(classes.root, classes.paper)} elevation={5}>
                         <Grid item>
                         <Paper>
-                            <Tabs value={value} onChange={this.handleChange} fullWidth>
+                            <Tabs
+                                value={value}
+                                onChange={this.handleChange}
+                                fullWidth
+                                indicatorColor="primary"
+                            >
                                 <Tab label="English" />
                                 <Tab label="Chinese" />
                             </Tabs>
