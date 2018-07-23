@@ -28,6 +28,7 @@ const styles = theme => ({
         textAlign: 'center',
         margin: '0 auto',
         width: '100%',
+        color: '#F1F1F2'
     },
     section: {
         paddingTop: 20,
@@ -35,12 +36,13 @@ const styles = theme => ({
     },
     title: {
         textAlign: 'center',
-        margin: '10px auto',
+        margin: '20px auto',
+        textTransform: 'capitalize',
     },
     bar: {
         display: 'block',
         height: 2,
-        backgroundColor: '#e67e22',
+        backgroundColor: '#1995AD',
         content: " ",
         width: 150,
         margin: '0 auto',
@@ -49,7 +51,7 @@ const styles = theme => ({
         width: '100%',
         margin: 0,
         padding: 10,
-        backgroundColor: '#e67e22'
+        backgroundColor: '#1995AD'
     },
     listGroup: {
         padding: '7% 10%',
@@ -60,15 +62,18 @@ const styles = theme => ({
     icon: {
         fontSize: 100,
         margin: '75px 50px',
-        color: '#e67e22',
+        color: '#A1D6E2',
+    },
+    textColor: {
+        color: '#BCBABE'
     }
 })
 
-const Schedule = ({procedure, classes}) => {
+const Schedule = ({procedure, styling}) => {
     return procedure.map((procedureItem, index) => {
         return(
-            <ListItem className={classes} key={index}>
-                <Typography variant="subheading">{procedureItem}</Typography>
+            <ListItem className={styling} key={index}>
+                <Typography variant="subheading" color="primary">{procedureItem}</Typography>
             </ListItem>
         )
     })
@@ -94,7 +99,7 @@ export default withStyles(styles)(class extends Component {
                 <Typography variant="display3" className={classes.title}>Join us for worship</Typography>
                 <div className={classes.bar}/>
                 <Grid container spacing={16} className={classes.grid} justify="center">
-                    <Paper className={classNames(classes.root, classes.paper)} elevation={5}>
+                    <Paper className={classNames(classes.root, classes.paper)} elevation={15}>
                         <Grid item>
                             <Paper className={classes.heading} elevation={2}>
                                 <Typography variant="headline" className={classes.header}>Sunday Worship Procedure</Typography>
@@ -107,14 +112,14 @@ export default withStyles(styles)(class extends Component {
                             <List className={classes.listGroup}>
                                 <Schedule
                                     procedure={['Prelude', 'Call to Worship', 'Singspiration', 'Pastoral Prayer', 'Scripture Reading', 'Message by Pastor', 'Responding Hymn', 'Bedediction', 'Welcome & Announcements', 'Postlude']}
-                                    classes={classes.procedure}
+                                    styling={classes.procedure}
                                 />
                             </List>
                             </Grid>
                             </Grid>
                         </Grid>
                     </Paper>
-                    <Paper className={classNames(classes.root, classes.paper)} elevation={5}>
+                    <Paper className={classNames(classes.root, classes.paper)} elevation={15}>
                         <Grid item>
                         <Paper>
                             <Tabs
@@ -133,7 +138,7 @@ export default withStyles(styles)(class extends Component {
                                     <List dense="true">
                                         <Schedule
                                             procedure={['English Sunday School', 'English Worship', 'Fellowship Lunch', 'Choir', 'Sports']}
-                                            classes={classes}
+                                            styling={classes}
                                         />
                                     </List>
                                 </Grid>
@@ -141,7 +146,7 @@ export default withStyles(styles)(class extends Component {
                                     <List dense="true">
                                         <Schedule
                                             procedure={['10:00 A.M.', '11:30 A.M.', '12:30 P.M.', '1:30 P.M.', '2:00 P.M.']}
-                                            classes={classes}
+                                            styling={classes}
                                         />
                                     </List>
                                 </Grid>
@@ -153,7 +158,7 @@ export default withStyles(styles)(class extends Component {
                                     <List dense="true">
                                         <Schedule
                                             procedure={['Chinese Worship', 'Chinese Sunday School', 'Fellowship Lunch', 'Choir', 'Sports']}
-                                            classes={classes}
+                                            styling={classes}
                                         />
                                     </List>
                                 </Grid>
@@ -161,7 +166,7 @@ export default withStyles(styles)(class extends Component {
                                     <List dense="true">
                                         <Schedule
                                             procedure={['10:00 A.M.', '11:30 A.M.', '12:30 P.M.', '1:30 P.M.', '2:00 P.M.']}
-                                            classes={classes}
+                                            styling={classes}
                                         />
                                     </List>
                                 </Grid>
