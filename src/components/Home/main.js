@@ -17,16 +17,17 @@ const styles = theme => ({
         fontFamily: 'Helvetica',
         textTransform: 'uppercase',
         fontWeight: 600,
+        fontSize: 100,
         transform: 'scaleY(1.3)',
         '&::first-letter': {
-            color: '#47b8e0',
+            color: '#A1D6E2',
             transform: 'scale(1,1.3)',
         },
 
     },
     title: {
-        paddingTop: '5%',
-        paddingLeft: '5%',
+        paddingTop: '8%',
+        paddingLeft: '8%',
     }
 })
 

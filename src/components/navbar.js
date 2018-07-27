@@ -1,14 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import MenuItem from '@material-ui/core/MenuItem';
-import Popover from '@material-ui/core/Popover';
+import { AppBar, Toolbar, Button, Typography, MenuList, MenuItem, Popper, Grow, ClickAwayListener, Paper } from '@material-ui/core';
+import logo from '../img/poro-group.png'
+
 import './navbar.css';
 
 const styles = theme => ({
@@ -23,8 +20,10 @@ const styles = theme => ({
     },
     title: {
         transform: 'scaleY(1.3)',
-        fontFamily: 'Lato',
+        fontFamily: 'Helvetica',
         fontWeight: 600,
+        verticalAlign: 'center',
+        fontSize: 35
     },
     button: {
         margin: theme.spacing.unit,
@@ -36,29 +35,63 @@ const styles = theme => ({
         },
     },
     menuButton: {
+        color: '#F1F1F2',
+        margin: '0 5px',
         '&:hover': {
-            backgroundColor: '#423e61'
+            borderBottom: '1px solid #A1D6E2',
+            borderRadius: 0
         },
     },
     nav: {
         backgroundColor: 'rgba(52, 49, 76, 0.4)',
+    },
+    img: {
+        height: 35
     }
 });
 
-class Navbar extends React.Component {
+export default withStyles(styles)(class extends Component {
     state = {
-        anchorEl: null,
+        open1: false,
+        open2: false,
+        open3: false,
+
+        anchorEl1: null,
+        anchorEl2: null,
+        anchorEl3: null,
+
     }
-    handleClick = event => {
-        this.setState({ anchorEl: event.currentTarget });
+    handleToggle1 = () => {
+        this.setState(state => ({ open1: !state.open1 }));
+    };
+    handleToggle2 = () => {
+        this.setState(state => ({ open2: !state.open2 }));
+    };
+    handleToggle3 = () => {
+        this.setState(state => ({ open3: !state.open3 }));
     };
 
-    handleClose = () => {
-        this.setState({ anchorEl: null });
+    handleClose1 = event => {
+        if (this.anchorEl1.contains(event.target)) {
+            return;
+        }
+        this.setState({ open1: false });
+    };
+    handleClose2 = event => {
+        if (this.anchorEl2.contains(event.target)) {
+            return;
+        }
+        this.setState({ open2: false });
+    };
+    handleClose3 = event => {
+        if (this.anchorEl3.contains(event.target)) {
+            return;
+        }
+        this.setState({ open3: false });
     };
 
     render() {
-        const { anchorEl } = this.state;
+        const { open1, open2, open3 } = this.state;
 
         const { classes } = this.props;
 
@@ -66,73 +99,110 @@ class Navbar extends React.Component {
         <div className={classes.root}>
             <AppBar position="fixed" className={classes.nav}>
                 <Toolbar>
-                    <Link to="/"><img src="./favicon.png" alt="logo" /></Link>
-                    <Typography variant="display1" color="inherit" className={classNames(classes.flex, classes.title)}>
-                        
+                    <Link to="/">
+                        <img src={logo} alt="logo" className={classes.img}/>
+                    </Link>
+                    <Typography variant="display1" color="inherit" className={classes.title}>
+                        MCCC
                     </Typography>
                     <Button
-                        className={classNames(classes.button, classes.menuButton)}
-                        aria-owns={anchorEl ? 'simple-menu' : null}
-                        anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                        buttonRef={node => {
+                          this.anchorEl1 = node;
+                        }}
+                        aria-owns={open1 ? 'menu-list-grow1' : null}
                         aria-haspopup="true"
-                        onClick={this.handleClick}
+                        onClick={this.handleToggle1}
+                        className={classes.menuButton}
                     >
-                    About Us
+                        About
                     </Button>
-                    <Popover
-                        open={Boolean(anchorEl)}
-                        anchorEl={anchorEl}
-                        onClose={this.handleClose}
-                        anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'center',
-                        }}
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'center',
-                        }}
-                    >
-                      <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                      <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                      <MenuItem onClick={this.handleClose}>Logout</MenuItem>
-                    </Popover>
+                    <Popper open={open1} anchorEl={this.anchorEl1} transition disablePortal>
+                        {({ TransitionProps, placement }) => (
+                            <Grow
+                                {...TransitionProps}
+                                id="menu-list-grow1"
+                                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                            >
+                                <Paper>
+                                    <ClickAwayListener onClickAway={this.handleClose1}>
+                                        <MenuList>
+                                            <MenuItem onClick={this.handleClose1}>History</MenuItem>
+                                            <MenuItem onClick={this.handleClose1}>Deacon Board</MenuItem>
+                                            <MenuItem onClick={this.handleClose1}>Faith Statement</MenuItem>
+                                            <MenuItem onClick={this.handleClose1}>Testimonies</MenuItem>
+                                            <MenuItem onClick={this.handleClose1}>New Members</MenuItem>
+                                        </MenuList>
+                                    </ClickAwayListener>
+                                </Paper>
+                            </Grow>
+                        )}
+                    </Popper>
                     <Button
-                        className={classNames(classes.button, classes.menuButton)}
-                        aria-owns={anchorEl ? 'simple-menu' : null}
-                        anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
+                        buttonRef={node => {
+                          this.anchorEl2 = node;
+                        }}
+                        aria-owns={open2 ? 'menu-list-grow2' : null}
                         aria-haspopup="true"
-                        onClick={this.handleClick}
+                        onClick={this.handleToggle2}
+                        className={classes.menuButton}
                     >
-                    Programs
+                        Sunday Classes
                     </Button>
-                    <Popover
-                        open={Boolean(anchorEl)}
-                        anchorEl={anchorEl}
-                        onClose={this.handleClose}
-                        anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'center',
+                    <Popper open={open2} anchorEl={this.anchorEl2} transition disablePortal>
+                        {({ TransitionProps, placement }) => (
+                            <Grow
+                                {...TransitionProps}
+                                id="menu-list-grow2"
+                                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                            >
+                                <Paper>
+                                    <ClickAwayListener onClickAway={this.handleClose2}>
+                                        <MenuList>
+                                            <MenuItem onClick={this.handleClose2}>Class 1</MenuItem>
+                                            <MenuItem onClick={this.handleClose2}>Class 2</MenuItem>
+                                            <MenuItem onClick={this.handleClose2}>Class 3</MenuItem>
+                                            <MenuItem onClick={this.handleClose2}>Class 4</MenuItem>
+                                        </MenuList>
+                                    </ClickAwayListener>
+                                </Paper>
+                            </Grow>
+                        )}
+                    </Popper>
+                    <Button
+                        buttonRef={node => {
+                          this.anchorEl3 = node;
                         }}
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'center',
-                        }}
+                        aria-owns={open3 ? 'menu-list-grow3' : null}
+                        aria-haspopup="true"
+                        onClick={this.handleToggle3}
+                        className={classes.menuButton}
                     >
-                      <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                      <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                      <MenuItem onClick={this.handleClose}>Logout</MenuItem>
-                    </Popover>
-                    <Button variant="contained" color="primary" className={classNames(classes.button, classes.cssRoot)}>Contact</Button>
+                        Connect
+                    </Button>
+                    <Popper open={open3} anchorEl={this.anchorEl3} transition disablePortal>
+                        {({ TransitionProps, placement }) => (
+                            <Grow
+                                {...TransitionProps}
+                                id="menu-list-grow3"
+                                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+                            >
+                                <Paper>
+                                    <ClickAwayListener onClickAway={this.handleClose3}>
+                                        <MenuList>
+                                            <MenuItem onClick={this.handleClose3}>Serve</MenuItem>
+                                            <MenuItem onClick={this.handleClose3}>Photos</MenuItem>
+                                            <MenuItem onClick={this.handleClose3}>Baptism</MenuItem>
+                                            <MenuItem onClick={this.handleClose3}>Events</MenuItem>
 
+                                        </MenuList>
+                                    </ClickAwayListener>
+                                </Paper>
+                            </Grow>
+                        )}
+                    </Popper>
                 </Toolbar>
             </AppBar>
         </div>
         );
     }
-
-}
-Navbar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Navbar);
+})
