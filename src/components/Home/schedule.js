@@ -1,22 +1,17 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Typography, Paper, List, ListItem, ListItemText, Grid, Tabs, Tab } from '@material-ui/core'
+import { Typography, Paper, List, ListItem, Grid, Tabs, Tab } from '@material-ui/core'
 import classNames from 'classnames';
 import FontAwesome from 'react-fontawesome';
 
 
 const styles = theme => ({
-    root: {
-         ...theme.mixins.gutters(),
-         paddingTop: theme.spacing.unit * 2,
-         paddingBottom: theme.spacing.unit * 2,
-    },
     list: {
         padding: '0 1%',
         color: '#34314c',
     },
     paper: {
-        margin: '5% 2%',
+        margin: '2% 2% 5% 2%',
         padding: 0,
         width: '40%',
     },
@@ -45,7 +40,7 @@ const styles = theme => ({
         backgroundColor: '#1995AD',
         content: " ",
         width: 150,
-        margin: '0 auto',
+        margin: '5px auto',
     },
     heading: {
         width: '100%',
@@ -66,19 +61,27 @@ const styles = theme => ({
     },
     textColor: {
         color: '#BCBABE'
+    },
+    scheduleList: {
+    },
+    map: {
+        color: '#A1D6E2',
+        '&:hover': {
+            color: '#1995AD',
+            textDecoration: 'none',
+        }
     }
 })
 
 const Schedule = ({procedure, styling}) => {
     return procedure.map((procedureItem, index) => {
         return(
-            <ListItem className={styling} key={index}>
+            <ListItem className={`${styling}`} key={index}>
                 <Typography variant="subheading" color="primary">{procedureItem}</Typography>
             </ListItem>
         )
     })
 }
-// <FontAwesome name="far fa-church" className={classes.icon}></FontAwesome>
 
 export default withStyles(styles)(class extends Component {
     constructor(props) {
@@ -98,8 +101,9 @@ export default withStyles(styles)(class extends Component {
             <div className={classes.section}>
                 <Typography variant="display3" className={classes.title}>Join us for worship</Typography>
                 <div className={classes.bar}/>
+                <Typography variant="subheading" align="center"><a className={classes.map} href="https://goo.gl/maps/wVAjBPkX4Fk">11085 Loughlin Dr  -  Mishawaka, IN 46530</a></Typography>
                 <Grid container spacing={16} className={classes.grid} justify="center">
-                    <Paper className={classNames(classes.root, classes.paper)} elevation={15}>
+                    <Paper className={classes.paper} elevation={15}>
                         <Grid item>
                             <Paper className={classes.heading} elevation={2}>
                                 <Typography variant="headline" className={classes.header}>Sunday Worship Procedure</Typography>
@@ -119,7 +123,7 @@ export default withStyles(styles)(class extends Component {
                             </Grid>
                         </Grid>
                     </Paper>
-                    <Paper className={classNames(classes.root, classes.paper)} elevation={15}>
+                    <Paper className={classes.paper} elevation={15}>
                         <Grid item>
                         <Paper>
                             <Tabs
@@ -135,15 +139,15 @@ export default withStyles(styles)(class extends Component {
                         {value === 0 &&
                             <Grid container className={classes.schedules}>
                                 <Grid item md={7}>
-                                    <List dense="true">
+                                    <List>
                                         <Schedule
                                             procedure={['English Sunday School', 'English Worship', 'Fellowship Lunch', 'Choir', 'Sports']}
-                                            styling={classes}
+                                            styling={classes.scheduleList}
                                         />
                                     </List>
                                 </Grid>
                                 <Grid item md={5}>
-                                    <List dense="true">
+                                    <List>
                                         <Schedule
                                             procedure={['10:00 A.M.', '11:30 A.M.', '12:30 P.M.', '1:30 P.M.', '2:00 P.M.']}
                                             styling={classes}
@@ -155,18 +159,18 @@ export default withStyles(styles)(class extends Component {
                         {value === 1 &&
                             <Grid container className={classes.schedules}>
                                 <Grid item md={7}>
-                                    <List dense="true">
+                                    <List>
                                         <Schedule
                                             procedure={['Chinese Worship', 'Chinese Sunday School', 'Fellowship Lunch', 'Choir', 'Sports']}
-                                            styling={classes}
+                                            styling={classes.scheduleList}
                                         />
                                     </List>
                                 </Grid>
                                 <Grid item md={5}>
-                                    <List dense="true">
+                                    <List>
                                         <Schedule
                                             procedure={['10:00 A.M.', '11:30 A.M.', '12:30 P.M.', '1:30 P.M.', '2:00 P.M.']}
-                                            styling={classes}
+                                            styling={classes.scheduleList}
                                         />
                                     </List>
                                 </Grid>

@@ -138,7 +138,7 @@ class home extends React.Component {
                         <Grid container spacing={16} className={classes.grid}>
                             <Grid item md={6}>
                                 <Typography variant="headline" className={classes.Typography}>Sunday Worship Procedure</Typography>
-                                <List dense="true">
+                                <List >
                                     <ListItem className={classes.list}><FontAwesome name="far fa-church" className={classes.icon}></FontAwesome>Prelude</ListItem>
                                     <ListItem className={classes.list}><FontAwesome name="far fa-church" className={classes.icon}></FontAwesome>Call to Worship</ListItem>
                                     <ListItem className={classes.list}><FontAwesome name="far fa-church" className={classes.icon}></FontAwesome>Singspiration</ListItem>
@@ -159,7 +159,7 @@ class home extends React.Component {
                                 <ExpansionPanelDetails>
                                     <Grid container>
                                         <Grid item md={7}>
-                                            <List dense="true">
+                                            <List >
                                                 <ListItem className={classes.list}>English Sunday School</ListItem>
                                                 <ListItem className={classes.list}>English Worship</ListItem>
                                                 <ListItem className={classes.list}>Fellowship Lunch</ListItem>
@@ -168,7 +168,7 @@ class home extends React.Component {
                                             </List>
                                         </Grid>
                                         <Grid item md={5}>
-                                            <List dense="true">
+                                            <List >
                                                 <ListItem className={classes.list}>10:00 A.M.</ListItem>
                                                 <ListItem className={classes.list}>11:30 A.M.</ListItem>
                                                 <ListItem className={classes.list}>12:30 P.M.</ListItem>
@@ -186,7 +186,7 @@ class home extends React.Component {
                                 <ExpansionPanelDetails>
                                     <Grid container>
                                         <Grid item md={7}>
-                                            <List dense="true">
+                                            <List >
                                                 <ListItem className={classes.list}>Chinese Worship</ListItem>
                                                 <ListItem className={classes.list}>Chinese Sunday School</ListItem>
                                                 <ListItem className={classes.list}>Fellowship Lunch</ListItem>
@@ -195,7 +195,7 @@ class home extends React.Component {
                                             </List>
                                         </Grid>
                                         <Grid item md={5}>
-                                            <List dense="true">
+                                            <List >
                                                 <ListItem className={classes.list}>10:00 A.M.</ListItem>
                                                 <ListItem className={classes.list}>11:30 A.M.</ListItem>
                                                 <ListItem className={classes.list}>12:30 P.M.</ListItem>
@@ -213,14 +213,14 @@ class home extends React.Component {
                                 <ExpansionPanelDetails>
                                     <Grid container>
                                         <Grid item md={7}>
-                                            <List dense="true">
+                                            <List >
                                                 <ListItem className={classes.list}>Children Worship</ListItem>
                                                 <ListItem className={classes.list}>Children Sunday School</ListItem>
                                                 <ListItem className={classes.list}>Fellowship Lunch</ListItem>
                                             </List>
                                         </Grid>
                                         <Grid item md={5}>
-                                            <List dense="true">
+                                            <List >
                                                 <ListItem className={classes.list}>10:00 A.M.</ListItem>
                                                 <ListItem className={classes.list}>11:30 A.M.</ListItem>
                                                 <ListItem className={classes.list}>12:30 P.M.</ListItem>

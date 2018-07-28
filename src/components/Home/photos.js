@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { withStyles } from '@material-ui/core/styles'
 import { Typography, Button } from '@material-ui/core'
 import church from '../../img/building.jpg'
@@ -22,7 +21,6 @@ const styles = theme => ({
         fontFamily: 'Helvetica',
         textTransform: 'uppercase',
         transform: 'scaleY(1.3)',
-        textAlign: 'center',
         color: '#1995AD',
         fontWeight: 600,
         border: '4px solid #1995AD',
@@ -61,9 +59,9 @@ export default withStyles(styles)(props => {
             <div className={classes.break}/>
             <Typography variant="display1" className={classes.title}>Photos</Typography>
             <Carousel showArrows={true} showThumbs={false} showStatus={false} infiniteLoop  className={classes.carousel}>
-                <img src={church} className={classes.img}/>
-                <img src={church} className={classes.img}/>
-                <img src={church} className={classes.img}/>
+                <img src={church} alt="1" className={classes.img}/>
+                <img src={church} alt="2" className={classes.img}/>
+                <img src={church} alt="3" className={classes.img}/>
             </Carousel>
             <div className={classes.bar}/>
             <Button variant="contained" size="large" className={classes.button}>View Gallery</Button>
