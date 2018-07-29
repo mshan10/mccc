@@ -1,0 +1,40 @@
+import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import { Grid, Typography } from '@material-ui/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
+
+
+const styles = theme => ({
+    footer: {
+        width: '100wh',
+        height: '10vh',
+        padding: '20px 150px',
+        backgroundColor: '#1995AD'
+    },
+    footerText: {
+        color: '#F1F1F2'
+    },
+    icon: {
+        display: 'inline',
+        color: '#F1F1F2'
+    }
+})
+
+export default withStyles(styles)(props => {
+    const { classes } = props
+    return(
+        <div className={classes.footer}>
+            <Grid container>
+                <Grid item md={6}>
+                    <Typography variant="header" className={classes.footerText}>© 2018 Michiana Chinese Christian Church, Indiana. </Typography>
+                </Grid>
+                <Grid item md={6}>
+                    <Typography align="right">
+                        <FontAwesomeIcon icon={faFacebookF} className={classes.icon}/>
+                    </Typography>
+                </Grid>
+            </Grid>
+        </div>
+    )
+})

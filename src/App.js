@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './components/NavBar/navbar';
 import Home from './components/Home';
+import Footer from './components/footer'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
             <div className="App">
                 <Navbar />
                 <Home />
+                <Footer />
             </div>
         </BrowserRouter>
     );
