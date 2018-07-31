@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Grid, Typography } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookF, faWeixin } from '@fortawesome/free-brands-svg-icons'
 
 
 const styles = theme => ({
@@ -17,7 +17,9 @@ const styles = theme => ({
     },
     icon: {
         display: 'inline',
-        color: '#F1F1F2'
+        color: '#F1F1F2',
+        margin: '0 10px',
+        fontSize: '20px'
     }
 })
 
@@ -32,6 +34,7 @@ export default withStyles(styles)(props => {
                 <Grid item md={6}>
                     <Typography align="right">
                         <FontAwesomeIcon icon={faFacebookF} className={classes.icon}/>
+                        <FontAwesomeIcon icon={faWeixin} className={classes.icon}/>
                     </Typography>
                 </Grid>
             </Grid>
