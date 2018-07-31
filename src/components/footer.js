@@ -22,7 +22,6 @@ const styles = theme => ({
         fontSize: '20px'
     }
 })
-
 export default withStyles(styles)(props => {
     const { classes } = props
     return(

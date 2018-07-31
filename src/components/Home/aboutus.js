@@ -8,6 +8,7 @@ const styles = theme => ({
         backgroundImage: `linear-gradient(to bottom, rgba(161,214,226,.5), rgba(161,214,226,.3)), url(${church})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
         height: '100vh',
         marginLeft: 'auto',
         marginRight: 'auto',
