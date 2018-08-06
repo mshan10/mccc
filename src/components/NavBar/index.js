@@ -16,8 +16,11 @@ const styles = theme => ({
     button: {
         margin: theme.spacing.unit,
     },
-    nav: {
+    homeNav: {
         backgroundColor: 'rgba(188,186,190, 0.3)',
+    },
+    fullNav: {
+        backgroundColor: '#A1D6E2',
     },
     img: {
         height: 35,
@@ -35,11 +38,14 @@ const styles = theme => ({
 
 export default withStyles(styles)(props => {
 
-    const { classes } = props;
+    const { classes, location } = props;
 
     return (
     <div className={classes.root}>
-        <AppBar position="fixed" className={classes.nav}>
+        <AppBar
+            position="fixed"
+            className={window.location.href.includes('/about') ? classes.fullNav : classes.homeNav}
+        >
             <Toolbar>
                 <Link to="/">
                     <img src={logo} alt="logo" className={classes.img}/>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/NavBar';
 import Home from './components/Home';
 import History from './components/About/history';
+import Deacon from './components/About/deacon';
 import Footer from './components/footer'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -14,6 +15,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/about/history" component={History} />
+                    <Route exact path="/about/deacon" component={Deacon} />
                 </Switch>
                 <Footer />
             </div>

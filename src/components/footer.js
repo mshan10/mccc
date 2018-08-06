@@ -28,7 +28,7 @@ export default withStyles(styles)(props => {
         <div className={classes.footer}>
             <Grid container>
                 <Grid item md={6}>
-                    <Typography variant="header" className={classes.footerText}>© 2018 Michiana Chinese Christian Church, Indiana. </Typography>
+                    <Typography variant="subheading" className={classes.footerText}>© 2018 Michiana Chinese Christian Church, Indiana. </Typography>
                 </Grid>
                 <Grid item md={6}>
                     <Typography align="right">
