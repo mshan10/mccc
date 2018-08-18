@@ -26,6 +26,9 @@ const styles = theme => ({
         padding: '70px 100px',
         lineHeight: 2,
         letterSpacing: 1.5
+    },
+    deaconBoard: {
+        padding: theme.spacing.unit *5
     }
 })
 
@@ -35,8 +38,42 @@ export default withStyles(styles)(props => {
         <div className={classes.deacon}>
             <Typography variant="display4" align="center" className={classes.historyTitle}>Deacon Board</Typography>
             <Paper className={classes.historyDetails}>
-                <Grid container spacing={16} justify="center">
-                    <Deacon></Deacon>
+                <Grid container spacing={40} justify="space-evenly" className={classes.deaconBoard}>
+                    <Grid item xs={4}>
+                        <Deacon
+                            title="Pastor"
+                            name="Pastor Rocky"
+                            bio="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                        />
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Deacon
+                            title="Pastor"
+                            name="Pastor Rocky"
+                            bio="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                        />
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Deacon
+                            title="Pastor"
+                            name="Pastor Rocky"
+                            bio="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                        />
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Deacon
+                            title="Pastor"
+                            name="Pastor Rocky"
+                            bio="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                        />
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Deacon
+                            title="Pastor"
+                            name="Pastor Rocky"
+                            bio="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                        />
+                    </Grid>
                 </Grid>
             </Paper>
         </div>

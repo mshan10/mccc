@@ -4,25 +4,36 @@ import { Typography, Paper, Grid, Card, CardMedia, CardContent, CardActions, But
 import Picture from "../../../img/deacon.jpg"
 
 const styles = theme => ({
+    cardMedia: {
+        height: 0,
+        paddingTop: '56.25%', // 16:9
+    },
+    card: {
+        // minWidth: 300,
+        // maxWidth: 300,
+        // margin: 50
+    }
 })
 
 export default withStyles(styles)(props => {
-    const { classes } = props
+    const { classes, title, name, bio } = props
     return(
         <Fragment>
             <Grid item>
                 <Card className={classes.card}>
                     <CardMedia
-                        className={classes.media}
                         image={Picture}
+                        className={classes.cardMedia}
                     />
                     <CardContent>
                         <Typography gutterBottom variant="headline" component="h2">
-                            Pastor
+                            {title}
+                        </Typography>
+                        <Typography variant="subheading">
+                            {name}
                         </Typography>
                         <Typography component="p">
-                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica
+                            {bio}
                         </Typography>
                     </CardContent>
                     <CardActions>
