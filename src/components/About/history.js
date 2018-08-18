@@ -4,24 +4,23 @@ import { Typography, Paper } from '@material-ui/core'
 import Picture from "../../img/history.png"
 
 const styles = theme => ({
-    history: {
+    background: {
         backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.6)), url(${Picture})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
     },
-    historyTitle: {
+    title: {
         paddingTop: 120,
         color: "#F1F1F2",
 
     },
-    historyDetails: {
+    details: {
         width: '100wh',
-        // height: '60vh',
         backgroundColor: '#fff',
         marginTop: 80
     },
-    historyText: {
+    text: {
         padding: '70px 100px',
         lineHeight: 2,
         letterSpacing: 1.5
@@ -32,10 +31,10 @@ export default withStyles(styles)(props => {
     const { classes } = props
 
     return (
-        <div className={classes.history}>
-            <Typography variant="display4" align="center" className={classes.historyTitle}>Our History</Typography>
-            <Paper className={classes.historyDetails}>
-                <Typography variant="headline" className={classes.historyText}>
+        <div className={classes.background}>
+            <Typography variant="display4" align="center" className={classes.title}>Our History</Typography>
+            <Paper className={classes.details}>
+                <Typography variant="headline" className={classes.text}>
                     Pre 1987	ND student fellowship & Elkhart Bible Study Group
                     1987-1990	Chinese student host families in Community Baptist Church
                     Jun 1990	Started planning & Bi-weekly prayer meeting to establish MCCC
