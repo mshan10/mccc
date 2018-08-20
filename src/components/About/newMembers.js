@@ -1,7 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Typography, Paper } from '@material-ui/core'
-import Picture from "../../../img/deacon.jpg"
+import Picture from "../../img/deacon.jpg"
 
 const styles = theme => ({
     background: {

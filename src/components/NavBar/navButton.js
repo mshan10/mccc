@@ -71,7 +71,7 @@ export default withStyles(styles)(class extends Component {
                                     <MenuList className={classes.dropDownList}>
                                         {items.map((item, i) => {
                                             return(
-                                                <MenuItem onClick={this.handleClose} className={classes.dropDownItem} key={i}><Link to={this.getLink(title, item)}>{item}</Link></MenuItem>
+                                                <Link to={this.getLink(title, item)}><MenuItem onClick={this.handleClose} className={classes.dropDownItem} key={i}>{item}</MenuItem></Link>
                                             )
                                         })}
                                     </MenuList>
