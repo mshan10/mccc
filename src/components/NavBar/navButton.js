@@ -38,6 +38,11 @@ export default withStyles(styles)(class extends Component {
         }
         this.setState({ open: false });
     };
+    getLink = (title, item) => {
+        let Title = title.toLowerCase()
+        let Item = item.toLowerCase().replace(/\s/g, '')
+        return (`/${Title}/${Item}`)
+    };
     render() {
         const { open } = this.state;
         const { classes, title, items } = this.props;
@@ -66,7 +71,7 @@ export default withStyles(styles)(class extends Component {
                                     <MenuList className={classes.dropDownList}>
                                         {items.map((item, i) => {
                                             return(
-                                                <MenuItem onClick={this.handleClose} className={classes.dropDownItem} key={i}>{item}</MenuItem>
+                                                <MenuItem onClick={this.handleClose} className={classes.dropDownItem} key={i}><Link to={this.getLink(title, item)}>{item}</Link></MenuItem>
                                             )
                                         })}
                                     </MenuList>
