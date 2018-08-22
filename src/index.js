@@ -1,4 +1,6 @@
 import React from 'react';
+import Parse from 'parse';
+import ParseReact from 'parse-react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
