@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Parse from 'parse'
-import { resolve } from "react-resolver";
 import { withStyles } from '@material-ui/core/styles'
 import {
     Typography,
@@ -13,15 +12,6 @@ import {
 } from '@material-ui/core'
 import Picture from "../../img/deacon.jpg"
 
-// resolve("testimonies", function(props) {
-//     return (new Parse.Query(new Parse.Object('Testimonies'))
-//         .find()
-//         .then(results => {
-//             console.log(results)
-//             return Promise.resolve(results)
-//         })
-//     )
-// })
 const styles = theme => ({
     background: {
         backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.6)), url(${Picture})`,
@@ -44,15 +34,26 @@ const styles = theme => ({
         letterSpacing: 1.5
     }
 })
-
+Parse.initialize("FC6cpsUs8zlFdwysXMgGbxopflQdO4g2KKlnAJNp", "5T4ZMeffojFJV49trkjxsJ64jpWlDNmLQQjTMPyo")
+Parse.serverURL = "https://parseapi.back4app.com/"
 export default withStyles(styles)(class extends Component {
-    state = {
-        data: [],
+    state = { testimonies: [] }
+    componentDidMount() {
+        return new Parse.Query(new Parse.Object('Testimonies'))
+            .find()
+            .then(results => {
+                console.log(results)
+                const testimonies = results
+                console.log('testimonies', testimonies)
+                this.setState({ testimonies })
+            })
     }
-
     render(){
-        const { classes, testimonies } = this.props
-        console.log(testimonies)
+        const { classes } = this.props
+        const { testimonies } = this.state
+        {testimonies.map(testimony => {
+            console.log('hi')
+        })}
         return(
             <div className={classes.background}>
                 <Typography variant="display4" align="center" className={classes.title}>Testimonies</Typography>
@@ -63,6 +64,7 @@ export default withStyles(styles)(class extends Component {
                                 <Grid container direction="column">
                                     <Grid container direction="row">
                                         <Grid item>
+                                            {testimonies[0].id}
                                         </Grid>
                                         <Grid item>
                                             <Typography>Test</Typography>

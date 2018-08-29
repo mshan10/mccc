@@ -10,18 +10,24 @@ import NewMembers from './components/About/newMembers'
 import Footer from './components/footer'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-Parse.initialize("FC6cpsUs8zlFdwysXMgGbxopflQdO4g2KKlnAJNp", "5T4ZMeffojFJV49trkjxsJ64jpWlDNmLQQjTMPyo")
-Parse.serverURL = "https://parseapi.back4app.com/";
+// Parse.initialize("FC6cpsUs8zlFdwysXMgGbxopflQdO4g2KKlnAJNp", "5T4ZMeffojFJV49trkjxsJ64jpWlDNmLQQjTMPyo")
+// Parse.serverURL = "https://parseapi.back4app.com/";
 
-const testimonies = (new Parse.Query(new Parse.Object('Testimonies'))
-    .find()
-    .then(results => {
-        return Promise.resolve(results)
-    })
-)
+
 class App extends Component {
+    // state={ testimonies: [] }
+    // componentDidMount() {
+    //     return new Parse.Query(new Parse.Object('Testimonies'))
+    //         .find()
+    //         .then(results => {
+    //             console.log(results)
+    //             const testimonies = results
+    //             console.log('testimonies', testimonies)
+    //             this.setState({ testimonies })
+    //             return results
+    //         })
+    // }
     render() {
-        console.log(testimonies)
         return (
             <BrowserRouter>
                 <div className="App">
@@ -31,7 +37,7 @@ class App extends Component {
                         <Route exact path="/about/history"><History/></Route>
                         <Route exact path="/about/deaconboard"><DeaconBoard/></Route>
                         <Route exact path="/about/faithstatement"><FaithStatement/></Route>
-                        <Route exact path="/about/testimonies"><Testimonies testimonies={testimonies}/></Route>
+                        <Route exact path="/about/testimonies"><Testimonies/></Route>
                         <Route exact path="/about/newmembers"><NewMembers/></Route>
                     </Switch>
                     <Footer />
