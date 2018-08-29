@@ -13,7 +13,6 @@ const styles = theme => ({
     title: {
         paddingTop: 120,
         color: "#F1F1F2",
-
     },
     details: {
         width: '100wh',

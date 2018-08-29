@@ -1,31 +1,44 @@
 import React, { Component } from 'react';
+import Parse from 'parse'
 import Navbar from './components/NavBar';
 import Home from './components/Home';
 import History from './components/About/history';
 import DeaconBoard from './components/About/deaconBoard';
 import FaithStatement from './components/About/faithStatement'
+import Testimonies from './components/About/testimonies'
 import NewMembers from './components/About/newMembers'
 import Footer from './components/footer'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+Parse.initialize("FC6cpsUs8zlFdwysXMgGbxopflQdO4g2KKlnAJNp", "5T4ZMeffojFJV49trkjxsJ64jpWlDNmLQQjTMPyo")
+Parse.serverURL = "https://parseapi.back4app.com/";
+
+const testimonies = (new Parse.Query(new Parse.Object('Testimonies'))
+    .find()
+    .then(results => {
+        return Promise.resolve(results)
+    })
+)
 class App extends Component {
-  render() {
-    return (
-        <BrowserRouter>
-            <div className="App">
-                <Navbar />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/about/history" component={History} />
-                    <Route exact path="/about/deaconboard" component={DeaconBoard} />
-                    <Route exact path="/about/faithstatement" component={FaithStatement} />
-                    <Route exact path="/about/newmembers" component={NewMembers} />
-                </Switch>
-                <Footer />
-            </div>
-        </BrowserRouter>
-    );
-  }
+    render() {
+        console.log(testimonies)
+        return (
+            <BrowserRouter>
+                <div className="App">
+                    <Navbar />
+                    <Switch>
+                        <Route exact path="/"><Home/></Route>
+                        <Route exact path="/about/history"><History/></Route>
+                        <Route exact path="/about/deaconboard"><DeaconBoard/></Route>
+                        <Route exact path="/about/faithstatement"><FaithStatement/></Route>
+                        <Route exact path="/about/testimonies"><Testimonies testimonies={testimonies}/></Route>
+                        <Route exact path="/about/newmembers"><NewMembers/></Route>
+                    </Switch>
+                    <Footer />
+                </div>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;
