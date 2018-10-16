@@ -5,7 +5,7 @@ import church from '../../img/church.jpg'
 
 const styles = theme => ({
     aboutUs: {
-        backgroundImage: `linear-gradient(to bottom, rgba(161,214,226,.5), rgba(161,214,226,.3)), url(${church})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(27, 77, 88,.7), rgba(27, 77, 88,.5)), url(${church})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -73,8 +73,7 @@ export default withStyles(styles)(props => {
                 </Grid>
                 <Grid item className={classes.box}>
                     <Typography variant="headline" className={classes.bodyText}>
-                        教会2018年度春季成人主日学从本周日(11/2)开始新的课程《从圣经的教导反省埋怨的教训》。本课程将以圣经中古代以色列民在出埃及至迦南途中因埋怨而遭受上帝惩罚所付上的生命代价为教训，检视当今信徒生活、生命中因抱怨所导致的毁坏性影响；伴随本课程亦将开展“不抱怨21天手环实践”活动。
-                    </Typography>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut neque turpis. Quisque pretium gravida est lobortis tincidunt. Quisque et nisi euismod, iaculis lectus quis, venenatis justo. Mauris at ultrices massa, id finibus dui. Phasellus feugiat, elit non iaculis tincidunt, felis odio scelerisque mauris, accumsan pulvinar metus massa quis nisi.                     </Typography>
                     <Button variant="outlined" size="large" className={classes.button}>
                         About Us
                     </Button>
