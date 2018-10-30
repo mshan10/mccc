@@ -10,19 +10,20 @@ import { faChurch } from '@fortawesome/free-solid-svg-icons'
 
 const styles = theme => ({
     paper: {
-        margin: '2% 2% 5% 2%',
-        padding: 0,
-        width: '40%',
+        padding: '30px 20px',
+        margin: '0px 40px'
     },
     section: {
         paddingTop: 20,
         maxWidth: '100%',
-        backgroundColor: '#f2f2f2'
+        backgroundColor: '#f2f2f2',
+        fontFamily: 'Open Sans',
     },
     title: {
         textAlign: 'center',
         margin: '20px auto',
         textTransform: 'capitalize',
+        fontWeight: 800,
     },
     bar: {
         display: 'block',
@@ -53,15 +54,24 @@ const styles = theme => ({
         borderRadius: '50%',
         border: '10px solid #1995AD',
         width: '250px',
-        height: '250px'
+        height: '250px',
+        marginBottom: '18px'
     },
     headline: {
         fontSize: '20px',
         color: '#A1D6E2',
-        letterSpacing: '2px'
-
+        letterSpacing: '2px',
+        fontWeight: 700
     },
-
+    grid: {
+        padding: '40px 0px'
+    },
+    caption: {
+        fontSize: '20px',
+        // color: '#A1D6E2',
+        // letterSpacing: '2px',
+        fontWeight: 700
+    }
 })
 
 // const Schedule = ({procedure, styling}) => {
@@ -74,49 +84,69 @@ const styles = theme => ({
 //     })
 // }
 
-export default withStyles(styles)(props => {
-    const { classes } = props
-    return(
-        <div className={classes.section}>
-            <Typography variant="display3" className={classes.title}>Join us for worship</Typography>
-            <div className={classes.bar}/>
-            <Typography variant="subheading" align="center">
-                <a className={classes.map} href="https://goo.gl/maps/wVAjBPkX4Fk">
-                    11085 Loughlin Dr  -  Mishawaka, IN 46530
-                </a>
-            </Typography>
-            <Grid container direction="row" className={classes.grid} justify="center" alignItems="center">
-                <Grid item>
-                    <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
-                        <Grid item>
-                            <FontAwesomeIcon icon={faGlobeAsia} className={classes.icon}></FontAwesomeIcon>
+export default withStyles(styles)(class extends Component {
+    state = {
+        e1: 1,
+    }
+    onHover() {
+        this.setState({ e1: 10 })
+    }
+    onLeave() {
+        this.setState({ e1: 1 })
+    }
+    render() {
+        const { classes } = this.props
+        let { e1 } = this.state
+        return(
+            <div className={classes.section}>
+                <Typography variant="display3" className={classes.title}>Join us for worship</Typography>
+                <div className={classes.bar}/>
+                <Typography variant="headline" align="center">
+                    <a className={classes.map} href="https://goo.gl/maps/wVAjBPkX4Fk">
+                        11085 Loughlin Dr  -  Mishawaka, IN 46530
+                    </a>
+                </Typography>
+                <Grid container direction="row" className={classes.grid} justify="center" alignItems="center">
+                    <Grid item>
+                        <Paper elevation={e1} onMouseEnter={this.onHover.bind(this)} onMouseLeave={this.onLeave.bind(this)} className={classes.paper}>
+                        <Grid container item direction="column" alignItems="center">
+                            <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
+                                <Grid item>
+                                    <FontAwesomeIcon icon={faGlobeAsia} className={classes.icon}></FontAwesomeIcon>
+                                </Grid>
+                                <Grid item>
+                                    <Typography variant="headline" className={classes.headline}>Chinese</Typography>
+                                </Grid>
+                            </Grid>
+                            <Typography variant="caption" className={classes.caption}>10:00 AM - 11:15 AM</Typography>
+                            <Typography variant="caption" className={classes.caption}>Pastor Rocky Yang</Typography>
+                            <Typography variant="caption" className={classes.caption}>{e1}</Typography>
+
                         </Grid>
-                        <Grid item>
-                            <Typography variant="headline" className={classes.headline}>Chinese</Typography>
+                        </Paper>
+                    </Grid>
+                    <Grid item>
+                        <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
+                            <Grid item>
+                                <FontAwesomeIcon icon={faGlobeAmericas} className={classes.icon}></FontAwesomeIcon>
+                            </Grid>
+                            <Grid item>
+                                <Typography variant="headline" className={classes.headline}>English</Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item>
+                        <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
+                            <Grid item>
+                                <FontAwesomeIcon icon={faChurch} className={classes.icon}></FontAwesomeIcon>
+                            </Grid>
+                            <Grid item>
+                                <Typography variant="headline" className={classes.headline}>Sunday School</Typography>
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item>
-                <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
-                    <Grid item>
-                        <FontAwesomeIcon icon={faGlobeAmericas} className={classes.icon}></FontAwesomeIcon>
-                    </Grid>
-                    <Grid item>
-                        <Typography variant="headline" className={classes.headline}>English</Typography>
-                    </Grid>
-                </Grid>
-                </Grid>
-                <Grid item>
-                <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
-                    <Grid item>
-                        <FontAwesomeIcon icon={faChurch} className={classes.icon}></FontAwesomeIcon>
-                    </Grid>
-                    <Grid item>
-                        <Typography variant="headline" className={classes.headline}>Sunday School</Typography>
-                    </Grid>
-                </Grid>
-                </Grid>
-            </Grid>
-        </div>
-    )
+            </div>
+        )
+    }
 })

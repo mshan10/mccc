@@ -14,7 +14,7 @@ const styles = theme => ({
     church: {
         margin: 0,
         letterSpacing: -2,
-        fontFamily: 'Helvetica',
+        fontFamily: 'Open Sans',
         textTransform: 'uppercase',
         fontWeight: 600,
         fontSize: 100,
