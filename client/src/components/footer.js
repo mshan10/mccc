@@ -7,7 +7,7 @@ import { faFacebookF, faWeixin } from '@fortawesome/free-brands-svg-icons'
 
 const styles = theme => ({
     footer: {
-        width: '100wh',
+        // width: '100wh',
         height: '10vh',
         padding: '20px 150px',
         backgroundColor: '#1995AD'

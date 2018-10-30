@@ -27,6 +27,7 @@ const styles = theme => ({
     },
     section: {
         paddingTop: 20,
+        maxWidth: '100%',
         backgroundColor: '#f2f2f2'
     },
     title: {
@@ -62,8 +63,8 @@ const styles = theme => ({
     textColor: {
         color: '#BCBABE'
     },
-    scheduleList: {
-    },
+    // scheduleList: {
+    // },
     map: {
         color: '#A1D6E2',
         '&:hover': {
@@ -101,7 +102,11 @@ export default withStyles(styles)(class extends Component {
             <div className={classes.section}>
                 <Typography variant="display3" className={classes.title}>Join us for worship</Typography>
                 <div className={classes.bar}/>
-                <Typography variant="subheading" align="center"><a className={classes.map} href="https://goo.gl/maps/wVAjBPkX4Fk">11085 Loughlin Dr  -  Mishawaka, IN 46530</a></Typography>
+                <Typography variant="subheading" align="center">
+                    <a className={classes.map} href="https://goo.gl/maps/wVAjBPkX4Fk">
+                        11085 Loughlin Dr  -  Mishawaka, IN 46530
+                    </a>
+                </Typography>
                 <Grid container spacing={16} className={classes.grid} justify="center">
                     <Paper className={classes.paper} elevation={15}>
                         <Grid item>
@@ -109,17 +114,17 @@ export default withStyles(styles)(class extends Component {
                                 <Typography variant="headline" className={classes.header}>Sunday Worship Procedure</Typography>
                             </Paper>
                             <Grid container>
-                            <Grid item md={4}>
-                                <FontAwesome name="far fa-church" className={classes.icon}></FontAwesome>
-                            </Grid>
-                            <Grid item md={8}>
-                            <List className={classes.listGroup}>
-                                <Schedule
-                                    procedure={['Prelude', 'Call to Worship', 'Singspiration', 'Pastoral Prayer', 'Scripture Reading', 'Message by Pastor', 'Responding Hymn', 'Bedediction', 'Welcome & Announcements', 'Postlude']}
-                                    styling={classes.procedure}
-                                />
-                            </List>
-                            </Grid>
+                                <Grid item md={4}>
+                                    <FontAwesome name="far fa-church" className={classes.icon}></FontAwesome>
+                                </Grid>
+                                <Grid item md={8}>
+                                    <List className={classes.listGroup}>
+                                        <Schedule
+                                            procedure={['Prelude', 'Call to Worship', 'Singspiration', 'Pastoral Prayer', 'Scripture Reading', 'Message by Pastor', 'Responding Hymn', 'Bedediction', 'Welcome & Announcements', 'Postlude']}
+                                            styling={classes.procedure}
+                                        />
+                                    </List>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Paper>

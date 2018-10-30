@@ -27,7 +27,7 @@ const styles = theme => ({
         margin: 7
     },
     contactButton: {
-        margin: '0 5px',
+        // margin: '0 5px',
         backgroundColor: '#1995AD',
         color: '#F1F1F2',
         '&:hover': {
