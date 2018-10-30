@@ -1,7 +1,12 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Typography, Button } from '@material-ui/core'
-import church from '../../img/building.jpg'
+import anniversary from '../../img/anniversary.jpg'
+import front from '../../img/front.jpg'
+import night from '../../img/night.jpg'
+import sing from '../../img/sing.jpg'
+import snow from '../../img/snow.jpg'
+import background from '../../img/bluewhite.jpg'
 import Carousel from 'react-responsive-carousel/lib/components/Carousel.js'
 
 const styles = theme => ({
@@ -11,26 +16,27 @@ const styles = theme => ({
     },
     carousel: {
         margin: '15px auto',
-        width: '65%',
+        width: '50%',
         border: '5px solid #F1F1F2',
         marginTop: 40,
     },
     title: {
         textAlign: 'center',
         padding: 5,
-        fontFamily: 'Helvetica',
         textTransform: 'uppercase',
-        transform: 'scaleY(1.3)',
         color: '#1995AD',
-        fontWeight: 600,
-        border: '4px solid #1995AD',
+        fontWeight: 700,
+        border: '5px solid #1995AD',
         width: '30%',
         margin: 'auto',
     },
     pictures: {
-        background: 'linear-gradient(#F1F1F2, #A1D6E2)',
-        height: '140vh',
+        backgroundImage: `url(${background})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '130vh',
         textAlign: 'center',
+        fontFamily: 'Open Sans',
     },
     break: {
         height: 50,
@@ -57,11 +63,13 @@ export default withStyles(styles)(props => {
     return(
         <div className={classes.pictures}>
             <div className={classes.break}/>
-            <Typography variant="display1" className={classes.title}>Photos</Typography>
-            <Carousel showArrows={true} showThumbs={false} showStatus={false} infiniteLoop  className={classes.carousel}>
-                <img src={church} alt="1" className={classes.img}/>
-                <img src={church} alt="2" className={classes.img}/>
-                <img src={church} alt="3" className={classes.img}/>
+            <Typography variant="display2" className={classes.title}>Photos</Typography>
+            <Carousel showArrows={true} showThumbs={false} showStatus={false} infiniteLoop className={classes.carousel}>
+                <img src={snow} alt="1" className={classes.img}/>
+                <img src={night} alt="2" className={classes.img}/>
+                <img src={anniversary} alt="3" className={classes.img}/>
+                <img src={front} alt="4" className={classes.img}/>
+                <img src={sing} alt="5" className={classes.img}/>
             </Carousel>
             <div className={classes.bar}/>
             <Button variant="contained" size="large" className={classes.button}>View Gallery</Button>

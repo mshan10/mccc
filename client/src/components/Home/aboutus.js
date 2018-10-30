@@ -57,9 +57,19 @@ const styles = theme => ({
     },
     button: {
         marginBottom: 10,
-        border: '3px solid #F1F1F2',
+        border: '4px solid #F1F1F2',
+        fontSize: '20px',
+        // letterSpacing: '1px',
+        '&:hover': {
+            transform: 'scale(1.05, 1.05)',
+            border: '4px solid #F1F1F2',
+            backgroundColor: 'rgba(25,149,173,.5)'
+        },
+        transition: '.5s'
+    },
+    buttonText: {
         color: '#F1F1F2',
-        letterSpacing: '1px'
+        fontWeight: 700
     }
 })
 
@@ -77,7 +87,9 @@ export default withStyles(styles)(props => {
                     <Typography variant="headline" className={classes.bodyText}>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut neque turpis. Quisque pretium gravida est lobortis tincidunt. Quisque et nisi euismod, iaculis lectus quis, venenatis justo. Mauris at ultrices massa, id finibus dui. Phasellus feugiat, elit non iaculis tincidunt, felis odio scelerisque mauris, accumsan pulvinar metus massa quis nisi.                     </Typography>
                     <Button variant="outlined" size="large" className={classes.button}>
-                        About Us
+                        <Typography variant="subheading" className={classes.buttonText}>
+                            More
+                        </Typography>
                     </Button>
                 </Grid>
                 <Grid item>
