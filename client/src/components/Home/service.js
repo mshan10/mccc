@@ -1,0 +1,7 @@
+import React, { Component } from 'react'
+import { withStyles } from '@material-ui/core/styles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlobeAsia } from '@fortawesome/free-solid-svg-icons'
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
+import { faChurch } from '@fortawesome/free-solid-svg-icons'
+import { Typography, Grid } from '@material-ui/core'
