@@ -18,7 +18,8 @@
         "react-resolver": "^3.1.2",
         "react-responsive-carousel": "^3.1.43",
         "react-router-dom": "^4.3.1",
-        "react-scripts": "1.1.4"
+        "react-scripts": "1.1.4",
+        "react-transition-group": "^1.2.1"
     },
     "scripts": {
         "start": "react-scripts start",

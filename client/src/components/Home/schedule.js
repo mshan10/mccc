@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Typography, Paper, Grid } from '@material-ui/core'
-// import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobeAsia } from '@fortawesome/free-solid-svg-icons'
 import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
@@ -11,11 +10,15 @@ import { faChurch } from '@fortawesome/free-solid-svg-icons'
 const styles = theme => ({
     paper: {
         padding: '30px 20px',
-        margin: '0px 40px'
+        margin: '0px 40px',
+        '&:hover': {
+            transform: 'scale(1.05, 1.05)',
+            cursor: 'pointer'
+        },
+        transition: '.5s'
     },
     section: {
         paddingTop: 20,
-        maxWidth: '100%',
         backgroundColor: '#f2f2f2',
         fontFamily: 'Open Sans',
     },
@@ -35,7 +38,6 @@ const styles = theme => ({
     },
     icon: {
         fontSize: 120,
-        // margin: '75px 50px',
         color: '#A1D6E2',
         textAlign:  'center',
         marginBottom: '7px'
@@ -48,7 +50,8 @@ const styles = theme => ({
         '&:hover': {
             color: '#1995AD',
             textDecoration: 'none',
-        }
+        },
+        transition: 'color .5s'
     },
     circle: {
         borderRadius: '50%',
@@ -64,51 +67,28 @@ const styles = theme => ({
         fontWeight: 700
     },
     grid: {
-        padding: '40px 0px'
+        padding: '40px 0px 60px 0px'
     },
     caption: {
         fontSize: '20px',
-        // color: '#A1D6E2',
-        // letterSpacing: '2px',
         fontWeight: 700
     }
 })
 
-// const Schedule = ({procedure, styling}) => {
-//     return procedure.map((procedureItem, index) => {
-//         return(
-//             <ListItem className={`${styling}`} key={index}>
-//                 <Typography variant="subheading" color="primary">{procedureItem}</Typography>
-//             </ListItem>
-//         )
-//     })
-// }
-
-export default withStyles(styles)(class extends Component {
-    state = {
-        e1: 1,
-    }
-    onHover() {
-        this.setState({ e1: 10 })
-    }
-    onLeave() {
-        this.setState({ e1: 1 })
-    }
-    render() {
-        const { classes } = this.props
-        let { e1 } = this.state
-        return(
-            <div className={classes.section}>
-                <Typography variant="display3" className={classes.title}>Join us for worship</Typography>
-                <div className={classes.bar}/>
-                <Typography variant="headline" align="center">
-                    <a className={classes.map} href="https://goo.gl/maps/wVAjBPkX4Fk">
-                        11085 Loughlin Dr  -  Mishawaka, IN 46530
-                    </a>
-                </Typography>
-                <Grid container direction="row" className={classes.grid} justify="center" alignItems="center">
-                    <Grid item>
-                        <Paper elevation={e1} onMouseEnter={this.onHover.bind(this)} onMouseLeave={this.onLeave.bind(this)} className={classes.paper}>
+export default withStyles(styles)(props => {
+    const { classes } = props
+    return(
+        <div className={classes.section}>
+            <Typography variant="display3" className={classes.title}>Join us for worship</Typography>
+            <div className={classes.bar}/>
+            <Typography variant="headline" align="center">
+                <a className={classes.map} href="https://goo.gl/maps/wVAjBPkX4Fk">
+                    11085 Loughlin Dr  -  Mishawaka, IN 46530
+                </a>
+            </Typography>
+            <Grid container direction="row" className={classes.grid} justify="center" alignItems="center">
+                <Grid item>
+                    <Paper elevation={2} className={classes.paper}>
                         <Grid container item direction="column" alignItems="center">
                             <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
                                 <Grid item>
@@ -118,35 +98,44 @@ export default withStyles(styles)(class extends Component {
                                     <Typography variant="headline" className={classes.headline}>Chinese</Typography>
                                 </Grid>
                             </Grid>
-                            <Typography variant="caption" className={classes.caption}>10:00 AM - 11:15 AM</Typography>
+                            <Typography variant="caption" className={classes.caption}>10:00 AM - 11:00 AM</Typography>
                             <Typography variant="caption" className={classes.caption}>Pastor Rocky Yang</Typography>
-                            <Typography variant="caption" className={classes.caption}>{e1}</Typography>
-
                         </Grid>
-                        </Paper>
-                    </Grid>
-                    <Grid item>
-                        <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
-                            <Grid item>
-                                <FontAwesomeIcon icon={faGlobeAmericas} className={classes.icon}></FontAwesomeIcon>
-                            </Grid>
-                            <Grid item>
-                                <Typography variant="headline" className={classes.headline}>English</Typography>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item>
-                        <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
-                            <Grid item>
-                                <FontAwesomeIcon icon={faChurch} className={classes.icon}></FontAwesomeIcon>
-                            </Grid>
-                            <Grid item>
-                                <Typography variant="headline" className={classes.headline}>Sunday School</Typography>
-                            </Grid>
-                        </Grid>
-                    </Grid>
+                    </Paper>
                 </Grid>
-            </div>
-        )
-    }
+                <Grid item>
+                    <Paper elevation={2} className={classes.paper}>
+                        <Grid container item direction="column" alignItems="center">
+                            <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
+                                <Grid item>
+                                    <FontAwesomeIcon icon={faGlobeAmericas} className={classes.icon}></FontAwesomeIcon>
+                                </Grid>
+                                <Grid item>
+                                    <Typography variant="headline" className={classes.headline}>English</Typography>
+                                </Grid>
+                            </Grid>
+                            <Typography variant="caption" className={classes.caption}>11:30 AM - 12:30 PM</Typography>
+                            <Typography variant="caption" className={classes.caption}>Pastor Kevin Haislip</Typography>
+                        </Grid>
+                    </Paper>
+                </Grid>
+                <Grid item>
+                    <Paper elevation={2} className={classes.paper}>
+                        <Grid container item direction="column" alignItems="center">
+                            <Grid container className={classes.circle} direction="column" justify="center" alignItems="center">
+                                <Grid item>
+                                    <FontAwesomeIcon icon={faChurch} className={classes.icon}></FontAwesomeIcon>
+                                </Grid>
+                                <Grid item>
+                                    <Typography variant="headline" className={classes.headline}>Sunday School</Typography>
+                                </Grid>
+                            </Grid>
+                            <Typography variant="caption" className={classes.caption}>English   10:00 AM - 11:00 AM</Typography>
+                            <Typography variant="caption" className={classes.caption}>Chinese   11:30 AM - 12:30 PM</Typography>
+                        </Grid>
+                    </Paper>
+                </Grid>
+            </Grid>
+        </div>
+    )
 })

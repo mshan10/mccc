@@ -5,7 +5,7 @@ import church from '../../img/church.jpg'
 
 const styles = theme => ({
     aboutUs: {
-        backgroundImage: `linear-gradient(to bottom, rgba(27, 77, 88,.7), rgba(27, 77, 88,.5)), url(${church})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(27, 77, 88,.2), rgba(27, 77, 88,.2)), url(${church})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -13,16 +13,17 @@ const styles = theme => ({
         marginLeft: 'auto',
         marginRight: 'auto',
         textAlign: 'center',
+        fontFamily: 'Open Sans',
     },
     header: {
         fontSize: 80,
-        fontFamily: 'Helvetica',
         textTransform: 'uppercase',
-        transform: 'scaleY(1.3)',
+        // transform: 'scaleY(1.3)',
         textAlign: 'center',
         color: '#F1F1F2',
         paddingTop: 30,
         fontWeight: 600,
+        letterSpacing: '1px'
     },
     bodyText: {
         color: '#F1F1F2',
@@ -57,7 +58,8 @@ const styles = theme => ({
     button: {
         marginBottom: 10,
         border: '3px solid #F1F1F2',
-        color: '#F1F1F2'
+        color: '#F1F1F2',
+        letterSpacing: '1px'
     }
 })
 
