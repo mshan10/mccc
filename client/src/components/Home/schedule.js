@@ -2,10 +2,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Typography, Paper, Grid } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobeAsia } from '@fortawesome/free-solid-svg-icons'
-import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
-import { faChurch } from '@fortawesome/free-solid-svg-icons'
-
+import { faGlobeAsia, faGlobeAmericas, faChurch } from '@fortawesome/free-solid-svg-icons'
 
 const styles = theme => ({
     paper: {

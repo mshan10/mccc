@@ -2,41 +2,99 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Grid, Typography } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF, faWeixin } from '@fortawesome/free-brands-svg-icons'
+import { faWeixin } from '@fortawesome/free-brands-svg-icons'
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
 
 
 const styles = theme => ({
     footer: {
         // width: '100wh',
-        height: '10vh',
-        padding: '20px 150px',
-        backgroundColor: '#1995AD'
+        height: '45vh',
+        fontFamily: 'Open Sans',
     },
     footerText: {
-        color: '#F1F1F2'
+        color: 'rgba(241,241,242, .7)'
+    },
+    info: {
+        // padding: '20px 150px',
+        backgroundColor: '#1995AD',
+        height: '35vh'
     },
     icon: {
         display: 'inline',
         color: '#F1F1F2',
         margin: '0 10px',
-        fontSize: '20px'
+        // fontSize: '20px'
+    },
+    copyright: {
+        backgroundColor: '#17424b',
+        height: '10vh'
+    },
+    section: {
+        padding: '30px 150px'
+    },
+    headline: {
+        color: '#F1F1F2',
+        fontWeight: 700,
+        paddingBottom: '15px'
+    },
+    subheading: {
+        color: 'rgba(241,241,242, .7)',
+        letterSpacing: '.5px',
+        lineHeight: '30px',
+        fontSize: '15px',
     }
 })
 export default withStyles(styles)(props => {
     const { classes } = props
     return(
-        <div className={classes.footer}>
-            <Grid container>
-                <Grid item md={6}>
-                    <Typography variant="subheading" className={classes.footerText}>© 2018 Michiana Chinese Christian Church, Indiana. </Typography>
+        <Grid container className={classes.footer}>
+            <Grid container className={classes.info} item direction="row">
+                <Grid item md={6} className={classes.section}>
+                    <Grid container item direction="column" justify="start">
+                        <Grid item>
+                            <Typography variant="headline" className={classes.headline}>Michiana Chinese Christian Church</Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="subheading" className={classes.subheading}>11085 Loughlin Dr</Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="subheading" className={classes.subheading}>Mishawaka, IN 46530</Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
-                <Grid item md={6}>
-                    <Typography align="right">
-                        <FontAwesomeIcon icon={faFacebookF} className={classes.icon}/>
-                        <FontAwesomeIcon icon={faWeixin} className={classes.icon}/>
-                    </Typography>
+                <Grid item md={6} className={classes.section}>
+                    <Grid container item direction="column" justify="start">
+                        <Grid item>
+                            <Typography variant="headline" className={classes.headline}>Contact</Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="subheading" className={classes.subheading}>
+                                <FontAwesomeIcon icon={faPhone} className={classes.icon} />
+                                (574) 574-5744
+                            </Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="subheading" className={classes.subheading}>
+                                <FontAwesomeIcon icon={faEnvelope} className={classes.icon} />
+                                mcccin@gmail.com
+                            </Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="subheading" className={classes.subheading}>
+                                <FontAwesomeIcon icon={faWeixin} className={classes.icon} />
+                                MCCCIN
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
-        </div>
+            <Grid container className={classes.copyright} item justify="center" alignItems="center">
+                <Grid item>
+                    <Typography variant="subheading" className={classes.subheading} className={classes.footerText}>© 2018 Michiana Chinese Christian Church, Indiana. </Typography>
+                </Grid>
+            </Grid>
+        </Grid>
     )
 })

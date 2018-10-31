@@ -24,7 +24,7 @@ const styles = theme => ({
         textAlign: 'center',
         padding: 5,
         textTransform: 'uppercase',
-        color: '#1995AD',
+        color: '#F2F2F2',
         fontWeight: 700,
         border: '5px solid #1995AD',
         width: '30%',
@@ -39,7 +39,7 @@ const styles = theme => ({
         fontFamily: 'Open Sans',
     },
     break: {
-        height: 50,
+        height: 30,
     },
     button: {
         color: '#F1F1F2',
