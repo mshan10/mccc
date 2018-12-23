@@ -7,7 +7,7 @@ import {
     ExpansionPanel,
     ExpansionPanelSummary,
     ExpansionPanelDetails,
-    Avatar,
+    // Avatar,
     Grid
 } from '@material-ui/core'
 import Picture from "../../img/deacon.jpg"
@@ -51,9 +51,9 @@ export default withStyles(styles)(class extends Component {
     render(){
         const { classes } = this.props
         const { testimonies } = this.state
-        {testimonies.map(testimony => {
+        testimonies.map(testimony => {
             console.log('hi')
-        })}
+        })
         return(
             <div className={classes.background}>
                 <Typography variant="display4" align="center" className={classes.title}>Testimonies</Typography>

@@ -5,7 +5,7 @@ import church from '../../img/church.jpg'
 
 const styles = theme => ({
     aboutUs: {
-        backgroundImage: `linear-gradient(to bottom, rgba(27, 77, 88,.2), rgba(27, 77, 88,.2)), url(${church})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(11,12,16,.3), rgba(11,12,16,.3)), url(${church})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -13,7 +13,6 @@ const styles = theme => ({
         marginLeft: 'auto',
         marginRight: 'auto',
         textAlign: 'center',
-        fontFamily: 'Open Sans',
     },
     header: {
         fontSize: 80,
@@ -26,28 +25,26 @@ const styles = theme => ({
         letterSpacing: '1px'
     },
     bodyText: {
-        color: '#F1F1F2',
+        color: theme.palette.text.primary,
         textAlign: 'center',
         marginTop: 10,
         marginBottom: 15,
     },
     boxLeft: {
         margin: '0 30px',
-        borderRadius: '3%',
         width: 30,
         height: '100%',
-        borderLeft: '10px solid #1995AD',
-        borderTop: '10px solid #1995AD',
-        borderBottom: '10px solid #1995AD',
+        borderLeft: `10px solid ${theme.palette.secondary.main}`,
+        borderTop: `10px solid ${theme.palette.secondary.main}`,
+        borderBottom: `10px solid ${theme.palette.secondary.main}`,
     },
     boxRight: {
         margin: '0 30px',
-        borderRadius: '3%',
         width: 30,
         height: '100%',
-        borderRight: '10px solid #1995AD',
-        borderTop: '10px solid #1995AD',
-        borderBottom: '10px solid #1995AD',
+        borderRight: `10px solid ${theme.palette.secondary.main}`,
+        borderTop: `10px solid ${theme.palette.secondary.main}`,
+        borderBottom: `10px solid ${theme.palette.secondary.main}`,
     },
     container: {
         marginTop: '2%',
@@ -57,18 +54,18 @@ const styles = theme => ({
     },
     button: {
         marginBottom: 10,
-        border: '4px solid #F1F1F2',
+        border: `3px solid ${theme.palette.secondary.dark}`,
         fontSize: '20px',
-        // letterSpacing: '1px',
+        borderRadius: '0px',
         '&:hover': {
             transform: 'scale(1.05, 1.05)',
-            border: '4px solid #F1F1F2',
-            backgroundColor: 'rgba(25,149,173,.5)'
+            border: `3px solid ${theme.palette.secondary.dark}`,
+            backgroundColor: 'rgba(31,40,51,.6)'
         },
         transition: '.5s'
     },
     buttonText: {
-        color: '#F1F1F2',
+        color: theme.palette.secondary.dark,
         fontWeight: 700
     }
 })

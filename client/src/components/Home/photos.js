@@ -17,24 +17,27 @@ const styles = theme => ({
     carousel: {
         margin: '15px auto',
         width: '50%',
-        border: '5px solid #F1F1F2',
+        border: `10px solid ${theme.palette.primary.main}`,
         marginTop: 40,
     },
     title: {
-        textAlign: 'center',
-        padding: 5,
+        padding: '5px 10px',
         textTransform: 'uppercase',
-        color: '#F2F2F2',
-        fontWeight: 700,
-        border: '5px solid #1995AD',
+        color: theme.palette.primary.main,
+        border: `10px solid ${theme.palette.primary.dark}`,
         width: '30%',
         margin: 'auto',
+        textAlign: 'center',
+        fontWeight: 600,
+        letterSpacing: '1px',
+        fontSize: '80px'
     },
     pictures: {
+        // background: 'linear-gradient(rgba(31,40,51,.9), rgba(31,40,51,.8))',
         backgroundImage: `url(${background})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '130vh',
+        height: '140vh',
         textAlign: 'center',
         fontFamily: 'Open Sans',
     },
@@ -42,16 +45,18 @@ const styles = theme => ({
         height: 30,
     },
     button: {
-        color: '#F1F1F2',
-        backgroundColor: '#1995AD',
+        color: theme.palette.text.primary,
+        borderRadius: '0px',
+        backgroundColor: theme.palette.primary.main,
         '&:hover': {
-            backgroundColor: '#157b8f'
-        }
+            backgroundColor: theme.palette.primary.dark,
+        },
+        transition: '.5s'
     },
     bar: {
         display: 'block',
         height: 4,
-        backgroundColor: '#1995AD',
+        backgroundColor: theme.palette.primary.main,
         content: " ",
         width: 500,
         margin: '20px auto',

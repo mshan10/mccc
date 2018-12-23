@@ -13,34 +13,34 @@ const styles = theme => ({
         height: '45vh',
         fontFamily: 'Open Sans',
     },
-    footerText: {
-        color: 'rgba(241,241,242, .7)'
-    },
+    // footerText: {
+    //     color: theme.palette.text.primary
+    // },
     info: {
         // padding: '20px 150px',
-        backgroundColor: '#1995AD',
+        backgroundColor: theme.palette.primary.main,
         height: '35vh'
     },
     icon: {
         display: 'inline',
-        color: '#F1F1F2',
+        color: theme.palette.secondary.main,
         margin: '0 10px',
         // fontSize: '20px'
     },
     copyright: {
-        backgroundColor: '#17424b',
+        backgroundColor: theme.palette.primary.dark,
         height: '10vh'
     },
     section: {
         padding: '30px 150px'
     },
     headline: {
-        color: '#F1F1F2',
+        color: theme.palette.secondary.main,
         fontWeight: 700,
         paddingBottom: '15px'
     },
     subheading: {
-        color: 'rgba(241,241,242, .7)',
+        color: theme.palette.text.primary,
         letterSpacing: '.5px',
         lineHeight: '30px',
         fontSize: '15px',
@@ -52,7 +52,7 @@ export default withStyles(styles)(props => {
         <Grid container className={classes.footer}>
             <Grid container className={classes.info} item direction="row">
                 <Grid item md={6} className={classes.section}>
-                    <Grid container item direction="column" justify="start">
+                    <Grid container item direction="column">
                         <Grid item>
                             <Typography variant="headline" className={classes.headline}>Michiana Chinese Christian Church</Typography>
                         </Grid>
@@ -65,7 +65,7 @@ export default withStyles(styles)(props => {
                     </Grid>
                 </Grid>
                 <Grid item md={6} className={classes.section}>
-                    <Grid container item direction="column" justify="start">
+                    <Grid container item direction="column">
                         <Grid item>
                             <Typography variant="headline" className={classes.headline}>Contact</Typography>
                         </Grid>
@@ -92,7 +92,7 @@ export default withStyles(styles)(props => {
             </Grid>
             <Grid container className={classes.copyright} item justify="center" alignItems="center">
                 <Grid item>
-                    <Typography variant="subheading" className={classes.subheading} className={classes.footerText}>© 2018 Michiana Chinese Christian Church, Indiana. </Typography>
+                    <Typography variant="subheading" className={classes.subheading}>© 2018 Michiana Chinese Christian Church, Indiana. </Typography>
                 </Grid>
             </Grid>
         </Grid>

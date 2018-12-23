@@ -5,16 +5,16 @@ import { Button, MenuList, MenuItem, Popper, Grow, ClickAwayListener, Paper } fr
 
 const styles = theme => ({
     menuButton: {
-        color: '#F1F1F2',
-        margin: '0 5px',
+        width: theme.spacing.unit * 15,
         '&:hover': {
-            borderBottom: '1px solid #A1D6E2',
+            borderBottom: `1px solid ${theme.palette.secondary.main}` ,
             borderRadius: 0
         },
     },
     dropDown: {
-        backgroundColor: 'rgb(25,149,173, .7)',
-        borderTop: '8px solid #A1D6E2'
+        // backgroundColor: ,
+        borderTop: `3px solid ${theme.palette.secondary.main}`,
+        borderRadius: '0px'
     },
     dropDownList: {
         paddingTop: 0,

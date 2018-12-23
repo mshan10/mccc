@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Typography, Paper, Grid, Card, CardMedia, CardContent, CardActions, Button } from '@material-ui/core'
+import { Typography, Grid, Card, CardMedia, CardContent, CardActions, Button } from '@material-ui/core'
 import Picture from "../../../img/deacon.jpg"
 
 const styles = theme => ({

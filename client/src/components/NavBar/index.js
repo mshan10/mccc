@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { withStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Button, Typography } from '@material-ui/core';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { withStyles } from '@material-ui/core/styles'
+import { AppBar, Toolbar, Button, Typography } from '@material-ui/core'
 import logo from '../../img/cross.png'
 import NavButton from './navButton'
 
 const styles = theme => ({
     title: {
-        fontFamily: 'Open Sans',
         fontWeight: 700,
         fontSize: 35,
         flexGrow: 1,
+        color: theme.palette.secondary.main
     },
     button: {
         margin: theme.spacing.unit,
@@ -20,7 +20,7 @@ const styles = theme => ({
         transition: '.5s'
     },
     fullNav: {
-        backgroundColor: '#A1D6E2',
+        backgroundColor: theme.palette.primary.main,
         transition: '.5s'
     },
     img: {
@@ -28,14 +28,16 @@ const styles = theme => ({
         margin: 7
     },
     contactButton: {
-        // margin: '0 5px',
-        backgroundColor: '#1995AD',
-        color: '#F1F1F2',
+        width: theme.spacing.unit * 15,
+        boxShadow: 'none',
+        backgroundColor: 'transparent',
+        color: theme.palette.secondary.main,
         '&:hover': {
-            backgroundColor: '#136f80'
+            backgroundColor: 'transparent',
+            color: theme.palette.secondary.dark
         },
     },
-});
+})
 
 export default withStyles(styles)(class extends Component {
     state = {
@@ -43,14 +45,14 @@ export default withStyles(styles)(class extends Component {
     }
     componentDidMount() {
         document.addEventListener('scroll', () => {
-            const isTop = window.scrollY < 100;
+            const isTop = window.scrollY < 100
             if (isTop !== this.state.isTop) {
                 this.setState({ isTop })
             }
-        });
+        })
     }
     render() {
-        const { classes, location } = this.props
+        const { classes } = this.props
         let { isTop } = this.state
         // <AppBar
         //     position="fixed"
@@ -67,7 +69,7 @@ export default withStyles(styles)(class extends Component {
                         <Link to="/">
                             <img src={logo} alt="logo" className={classes.img}/>
                         </Link>
-                        <Typography variant="display1" color="inherit" className={classes.title}>
+                        <Typography variant="display1" className={classes.title}>
                             MCCC
                         </Typography>
                         <NavButton

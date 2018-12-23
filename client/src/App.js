@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Parse from 'parse'
 import Navbar from './components/NavBar';
 import Home from './components/Home';
 import History from './components/About/history';
@@ -15,18 +14,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
 class App extends Component {
-    // state={ testimonies: [] }
-    // componentDidMount() {
-    //     return new Parse.Query(new Parse.Object('Testimonies'))
-    //         .find()
-    //         .then(results => {
-    //             console.log(results)
-    //             const testimonies = results
-    //             console.log('testimonies', testimonies)
-    //             this.setState({ testimonies })
-    //             return results
-    //         })
-    // }
     render() {
         return (
             <BrowserRouter>

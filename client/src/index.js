@@ -1,16 +1,38 @@
-import React from 'react';
-import Parse from 'parse';
-// import ParseReact from 'parse-react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core'
+import './index.css'
+import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#1f2833',
+            dark: '#0b0c10'
+        },
+        secondary: {
+            main: '#66fcf1',
+            dark: '#45a29e'
+        },
+        text: {
+            primary: 'rgba(197,198,199,.87)',
+            secondary: 'rgba(197,198,199,.6)'
+        },
+        background: {
+            paper: '#1f2833',
+            default: '#1f2833'
+        }
+    },
+    typography: {
+        fontFamily: "'Open Sans', 'Helvetica', 'Arial', sans-serif"
+    }
+})
 
-Parse.initialize("FC6cpsUs8zlFdwysXMgGbxopflQdO4g2KKlnAJNp", "5T4ZMeffojFJV49trkjxsJ64jpWlDNmLQQjTMPyo")
-Parse.serverURL = "https://parseapi.back4app.com/";
-// const user = new Parse.Object('Sermon');
-// user.set("title", "test");
-// user.save()
+ReactDOM.render(
+    <MuiThemeProvider theme={theme}>
+        <App />
+    </MuiThemeProvider>,
+    document.getElementById('root')
+)
+registerServiceWorker()
