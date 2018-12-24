@@ -21,25 +21,30 @@ const styles = theme => ({
         marginTop: 40,
     },
     title: {
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 50
+        },
+        [theme.breakpoints.up('sm')]: {
+            fontSize: 80
+        },
         padding: '5px 10px',
         textTransform: 'uppercase',
         color: theme.palette.primary.main,
-        border: `10px solid ${theme.palette.primary.dark}`,
-        width: '30%',
-        margin: 'auto',
+        // border: `10px solid ${theme.palette.primary.dark}`,
+        // width: '30%',
+        // margin: 'auto',
         textAlign: 'center',
         fontWeight: 600,
         letterSpacing: '1px',
-        fontSize: '80px'
     },
     pictures: {
         // background: 'linear-gradient(rgba(31,40,51,.9), rgba(31,40,51,.8))',
         backgroundImage: `url(${background})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: '140vh',
         textAlign: 'center',
         fontFamily: 'Open Sans',
+        paddingBottom: '20px'
     },
     break: {
         height: 30,
@@ -58,7 +63,7 @@ const styles = theme => ({
         height: 4,
         backgroundColor: theme.palette.primary.main,
         content: " ",
-        width: 500,
+        width: '40vw',
         margin: '20px auto',
     },
 })

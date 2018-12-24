@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
-import { Button, MenuList, MenuItem, Popper, Grow, ClickAwayListener, Paper } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu'
+import MediaQuery from 'react-responsive'
+import {
+    Button,
+    MenuList,
+    MenuItem,
+    Popper,
+    Grow,
+    ClickAwayListener,
+    Paper,
+    IconButton
+} from '@material-ui/core';
 
 const styles = theme => ({
     menuButton: {
@@ -10,6 +21,9 @@ const styles = theme => ({
             borderBottom: `1px solid ${theme.palette.secondary.main}` ,
             borderRadius: 0
         },
+    },
+    mobileButton: {
+        color: theme.palette.secondary.main
     },
     dropDown: {
         // backgroundColor: ,
@@ -48,17 +62,33 @@ export default withStyles(styles)(class extends Component {
         const { classes, title, items } = this.props;
         return(
             <div>
-                <Button
-                    buttonRef={node => {
-                      this.anchorEl = node;
-                    }}
-                    aria-owns={open ? 'menu-list-grow' : null}
-                    aria-haspopup="true"
-                    onClick={this.handleToggle}
-                    className={classes.menuButton}
-                >
-                    {title}
-                </Button>
+                <MediaQuery minDeviceWidth={1224}>
+                    <Button
+                        buttonRef={node => {
+                          this.anchorEl = node;
+                        }}
+                        aria-owns={open ? 'menu-list-grow' : null}
+                        aria-haspopup="true"
+                        onClick={this.handleToggle}
+                        className={classes.menuButton}
+                    >
+                        {title}
+                    </Button>
+                </MediaQuery>
+                <MediaQuery maxWidth={1224}>
+                    <IconButton
+                        aria-label="Menu"
+                        buttonRef={node => {
+                          this.anchorEl = node;
+                        }}
+                        aria-owns={open ? 'menu-list-grow' : null}
+                        aria-haspopup="true"
+                        onClick={this.handleToggle}
+                        className={classes.mobileButton}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                </MediaQuery>
                 <Popper open={open} anchorEl={this.anchorEl} transition disablePortal>
                     {({ TransitionProps, placement }) => (
                         <Grow

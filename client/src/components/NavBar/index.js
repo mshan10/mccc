@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import { AppBar, Toolbar, Button, Typography } from '@material-ui/core'
 import logo from '../../img/cross.png'
 import NavButton from './navButton'
+import MediaQuery from 'react-responsive'
 
 const styles = theme => ({
     title: {
@@ -72,15 +73,23 @@ export default withStyles(styles)(class extends Component {
                         <Typography variant="display1" className={classes.title}>
                             MCCC
                         </Typography>
-                        <NavButton
-                            title={"About"}
-                            items={["History", "Deacon Board", "Faith Statement", "Testimonies", "New Members"]}
-                        />
-                        <NavButton
-                            title={"Connect"}
-                            items={["Serve", "Photos", "Baptism", "Events"]}
-                        />
-                        <Button variant="contained" className={classes.contactButton}>Contact</Button>
+                        <MediaQuery minDeviceWidth={1224}>
+                            <NavButton
+                                title={"About"}
+                                items={["History", "Deacon Board", "Faith Statement", "Testimonies", "New Members"]}
+                            />
+                            <NavButton
+                                title={"Connect"}
+                                items={["Serve", "Photos", "Baptism", "Events"]}
+                            />
+                            <Button variant="contained" className={classes.contactButton}>Contact</Button>
+                        </MediaQuery>
+                        <MediaQuery maxWidth={1224}>
+                            <NavButton
+                                title={"Menu"}
+                                items={["About", "Connect", "Contact"]}
+                            />
+                        </MediaQuery>
                     </Toolbar>
                 </AppBar>
             </div>

@@ -9,18 +9,24 @@ const styles = theme => ({
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
-        height: '100vh',
+        // height: '100vh',
         marginLeft: 'auto',
         marginRight: 'auto',
+        paddingBottom: '70px',
         textAlign: 'center',
     },
     header: {
-        fontSize: 80,
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 50,
+        },
+        [theme.breakpoints.up('sm')]: {
+            fontSize: 80,
+        },
         textTransform: 'uppercase',
-        // transform: 'scaleY(1.3)',
+        transform: 'scaleY(1.3)',
         textAlign: 'center',
         color: '#F1F1F2',
-        paddingTop: 30,
+        padding: '20px 0',
         fontWeight: 600,
         letterSpacing: '1px'
     },
@@ -29,9 +35,17 @@ const styles = theme => ({
         textAlign: 'center',
         marginTop: 10,
         marginBottom: 15,
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '15px',
+        }
     },
     boxLeft: {
-        margin: '0 30px',
+        [theme.breakpoints.down('sm')]: {
+            margin: '0 10px',
+        },
+        [theme.breakpoints.up('sm')]: {
+            margin: '0 30px',
+        },
         width: 30,
         height: '100%',
         borderLeft: `10px solid ${theme.palette.secondary.main}`,
@@ -39,7 +53,12 @@ const styles = theme => ({
         borderBottom: `10px solid ${theme.palette.secondary.main}`,
     },
     boxRight: {
-        margin: '0 30px',
+        [theme.breakpoints.down('sm')]: {
+            margin: '0 10px',
+        },
+        [theme.breakpoints.up('sm')]: {
+            margin: '0 30px',
+        },
         width: 30,
         height: '100%',
         borderRight: `10px solid ${theme.palette.secondary.main}`,
@@ -76,7 +95,7 @@ export default withStyles(styles)(props => {
     return (
         <div className={classes.aboutUs}>
             <Typography variant="headline" className={classes.header}>About Us</Typography>
-            <Grid container justify="center" className={classes.container}>
+            <Grid container justify="space-evenly" className={classes.container}>
                 <Grid item>
                     <div className={classes.boxLeft}/>
                 </Grid>

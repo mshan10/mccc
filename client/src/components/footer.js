@@ -32,7 +32,7 @@ const styles = theme => ({
         height: '10vh'
     },
     section: {
-        padding: '30px 150px'
+        // padding: '30px 150px'
     },
     headline: {
         color: theme.palette.secondary.main,
@@ -50,9 +50,8 @@ export default withStyles(styles)(props => {
     const { classes } = props
     return(
         <Grid container className={classes.footer}>
-            <Grid container className={classes.info} item direction="row">
-                <Grid item md={6} className={classes.section}>
-                    <Grid container item direction="column">
+            <Grid container className={classes.info} item direction="row" alignItems='center' justify='space-around'>
+                <Grid item container md={4} direction="column" className={classes.section} alignItems='flex-start' justify='center'>
                         <Grid item>
                             <Typography variant="headline" className={classes.headline}>Michiana Chinese Christian Church</Typography>
                         </Grid>
@@ -62,10 +61,8 @@ export default withStyles(styles)(props => {
                         <Grid item>
                             <Typography variant="subheading" className={classes.subheading}>Mishawaka, IN 46530</Typography>
                         </Grid>
-                    </Grid>
                 </Grid>
-                <Grid item md={6} className={classes.section}>
-                    <Grid container item direction="column">
+                <Grid item container md={4} direction="column" className={classes.section} alignItems='flex-start' justify='center'>
                         <Grid item>
                             <Typography variant="headline" className={classes.headline}>Contact</Typography>
                         </Grid>
@@ -87,7 +84,6 @@ export default withStyles(styles)(props => {
                                 MCCCIN
                             </Typography>
                         </Grid>
-                    </Grid>
                 </Grid>
             </Grid>
             <Grid container className={classes.copyright} item justify="center" alignItems="center">
