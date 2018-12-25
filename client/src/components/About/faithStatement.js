@@ -11,18 +11,21 @@ const styles = theme => ({
         backgroundAttachment: 'fixed',
     },
     title: {
-        paddingTop: 120,
+        paddingTop: 100,
         color: "#F1F1F2",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 50
+        }
     },
     details: {
         width: '100wh',
-        backgroundColor: '#fff',
+        backgroundColor: '#f7f7f7',
         marginTop: 80
     },
     text: {
         padding: '70px 100px',
         lineHeight: 2,
-        letterSpacing: 1.5
+        color: theme.palette.primary.main
     }
 })
 
@@ -32,8 +35,8 @@ export default withStyles(styles)(props => {
         <div className={classes.background}>
             <Typography variant="display4" align="center" className={classes.title}>Faith Statement</Typography>
             <Paper className={classes.details}>
-                <Typography variant="body1" className={classes.text}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna sem, elementum quis fermentum sit amet, ultricies eget nulla. Vestibulum sit amet tortor elit. Aenean eget urna ac nunc tristique tempus. Aliquam eu nulla a tortor blandit molestie. Curabitur venenatis dictum purus facilisis vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer hendrerit nulla id felis maximus finibus a et nisi. Curabitur vitae finibus ligula, eu eleifend nisl. Nunc et enim sed tortor porta blandit. Nunc eu lacus a enim elementum faucibus. Suspendisse vitae elit urna. Mauris feugiat nec purus in sagittis. Quisque neque turpis, commodo sed nisl aliquam, tempor scelerisque nibh. Maecenas eu leo pulvinar, luctus urna et, aliquet nibh.
+                <Typography variant="headline" className={classes.text}>
+                    "The purpose of the Church is to unite Christians in the worship of Jesus Christ our God, encourage members to lead a Christian life, proclaim Christ's grace through His salvation, and carry out spreading the Gospel among Chinese in Michiana, so that these individuals, along with their families, can gain complete salvation, further the kingdom of God to all the world, to receive Christ's second coming."
                 </Typography>
             </Paper>
         </div>

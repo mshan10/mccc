@@ -8,24 +8,13 @@ import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 
 const styles = theme => ({
-    footer: {
-        // width: '100wh',
-        // height: '45vh',
-        // fontFamily: 'Open Sans',
-    },
-    // footerText: {
-    //     color: theme.palette.text.primary
-    // },
     info: {
-        // padding: '20px 150px',
         backgroundColor: theme.palette.primary.main,
-        // height: '35vh'
     },
     icon: {
         display: 'inline',
         color: theme.palette.secondary.main,
         margin: '0 10px',
-        // fontSize: '20px'
     },
     copyright: {
         backgroundColor: theme.palette.primary.dark,
@@ -50,7 +39,7 @@ const styles = theme => ({
 export default withStyles(styles)(props => {
     const { classes } = props
     return(
-        <Grid container className={classes.footer}>
+        <Grid container>
             <Grid container className={classes.info} item direction="row" alignItems='center' justify='space-around'>
                 <Grid item container md={4} direction="column" className={classes.section} alignItems='flex-start' justify='center'>
                         <Grid item>

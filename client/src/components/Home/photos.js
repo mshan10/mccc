@@ -35,15 +35,12 @@ const styles = theme => ({
         padding: '5px 10px',
         textTransform: 'uppercase',
         color: theme.palette.primary.main,
-        // border: `10px solid ${theme.palette.primary.dark}`,
-        // width: '30%',
-        // margin: 'auto',
+
         textAlign: 'center',
         fontWeight: 600,
         letterSpacing: '1px',
     },
     pictures: {
-        // background: 'linear-gradient(rgba(31,40,51,.9), rgba(31,40,51,.8))',
         backgroundImage: `url(${background})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',

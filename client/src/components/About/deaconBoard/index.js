@@ -12,9 +12,11 @@ const styles = theme => ({
         backgroundAttachment: 'fixed',
     },
     title: {
-        paddingTop: 120,
+        paddingTop: 100,
         color: "#F1F1F2",
-
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 50
+        }
     },
     details: {
         width: '100wh',
@@ -38,39 +40,67 @@ export default withStyles(styles)(props => {
             <Typography variant="display4" align="center" className={classes.title}>Deacon Board</Typography>
             <Paper className={classes.details}>
                 <Grid container spacing={40} justify="space-evenly" className={classes.deaconBoard}>
-                    <Grid item xs={4}>
+                    <Grid item md={4}>
                         <Deacon
                             title="Pastor"
-                            name="Pastor Rocky"
-                            bio="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                            name="Rocky Yang"
+                            bio="Lead Chinese Services"
                         />
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item md={4}>
                         <Deacon
-                            title="Pastor"
-                            name="Pastor Rocky"
-                            bio="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                            title="Youth Pastor"
+                            name="Jody Haislip"
+                            bio="Lead English and Youth Services"
                         />
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item md={4}>
                         <Deacon
-                            title="Pastor"
-                            name="Pastor Rocky"
-                            bio="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                            title="Chairman"
+                            name="John Yuan"
+                            bio="General Affairs"
                         />
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item md={4}>
                         <Deacon
-                            title="Pastor"
-                            name="Pastor Rocky"
-                            bio="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                            title="Elder"
+                            name="Daniel Dew"
+                            bio=""
                         />
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item md={4}>
                         <Deacon
-                            title="Pastor"
-                            name="Pastor Rocky"
-                            bio="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+                            title="Deacon"
+                            name="Rugang Li"
+                            bio="Chinese Worship"
+                        />
+                    </Grid>
+                    <Grid item md={4}>
+                        <Deacon
+                            title="Deacon"
+                            name="John Wang"
+                            bio="English Worship"
+                        />
+                    </Grid>
+                    <Grid item md={4}>
+                        <Deacon
+                            title="Deacon"
+                            name="Simon Zhang"
+                            bio="Christian Education"
+                        />
+                    </Grid>
+                    <Grid item md={4}>
+                        <Deacon
+                            title="Deacon"
+                            name="Bruce Li"
+                            bio="Youth and Children Ministry"
+                        />
+                    </Grid>
+                    <Grid item md={4}>
+                        <Deacon
+                            title="Deacon"
+                            name="Jerry Wei"
+                            bio="Treasurer & General Affairs"
                         />
                     </Grid>
                 </Grid>

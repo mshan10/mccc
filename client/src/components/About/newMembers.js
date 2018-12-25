@@ -11,8 +11,11 @@ const styles = theme => ({
         backgroundAttachment: 'fixed',
     },
     title: {
-        paddingTop: 120,
+        paddingTop: 100,
         color: "#F1F1F2",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 50
+        }
     },
     details: {
         width: '100wh',

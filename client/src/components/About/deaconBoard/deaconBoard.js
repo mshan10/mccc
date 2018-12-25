@@ -9,9 +9,11 @@ const styles = theme => ({
         paddingTop: '56.25%', // 16:9
     },
     card: {
-        // minWidth: 300,
-        // maxWidth: 300,
-        // margin: 50
+        minWidth: 350,
+        maxHeight: 350,
+    },
+    secondary: {
+        color: theme.palette.text.secondary
     }
 })
 
@@ -32,7 +34,7 @@ export default withStyles(styles)(props => {
                         <Typography variant="subheading">
                             {name}
                         </Typography>
-                        <Typography component="p">
+                        <Typography className={classes.secondary} component="p">
                             {bio}
                         </Typography>
                     </CardContent>

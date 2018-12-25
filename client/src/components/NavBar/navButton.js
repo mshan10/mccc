@@ -26,7 +26,6 @@ const styles = theme => ({
         color: theme.palette.secondary.main
     },
     dropDown: {
-        // backgroundColor: ,
         borderTop: `3px solid ${theme.palette.secondary.main}`,
         borderRadius: '0px'
     },

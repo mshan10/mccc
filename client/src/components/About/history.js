@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Typography, Paper } from '@material-ui/core'
+import { Typography, Paper, Grid } from '@material-ui/core'
 import Picture from "../../img/history.png"
 
 const styles = theme => ({
@@ -11,49 +11,86 @@ const styles = theme => ({
         backgroundAttachment: 'fixed',
     },
     title: {
-        paddingTop: 120,
+        paddingTop: 100,
         color: "#F1F1F2",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 50
+        }
     },
     details: {
         width: '100wh',
         backgroundColor: '#fff',
-        marginTop: 80
+        marginTop: 80,
+        padding: '50px 0',
     },
     text: {
-        padding: '70px 100px',
         lineHeight: 2,
-        letterSpacing: 1.5
+        color: theme.palette.primary.main,
+        fontSize: 20
     }
 })
 
-export default withStyles(styles)(props => {
-    const { classes } = props
-
-    return (
-        <div className={classes.background}>
-            <Typography variant="display4" align="center" className={classes.title}>Our History</Typography>
-            <Paper className={classes.details}>
-                <Typography variant="headline" className={classes.text}>
-                    Pre 1987	ND student fellowship & Elkhart Bible Study Group
-                    1987-1990	Chinese student host families in Community Baptist Church
-                    Jun 1990	Started planning & Bi-weekly prayer meeting to establish MCCC
-                    Sep 15, 1991	First Monthly worship at Gospel Center, Thanks to Rev. T. Murphy’s support
-                    Feb 9, 1991	First Baptism
-                    May 1991	Pastor John Chao’s 1st weekly worship
-                    Jan 1993	Set up the building fund
-                    Aug 1997	Yamin dedicated to full-time ministry
-                    Dec 1997	Rev. John Chao left for CCUC
-                    1998-2000	Thanks to Rev. Clapper, Banks, Jerome and Indi. CCC for preaching
-                    Aug 2000	Dustin dedicated to full-time ministry
-                    Feb 2001	Pastor Andrew Cho joined MCCC
-                    May 2002	10th anniversary and pastor/ elder ordination
-                    Jul 2002	“scouted” the St Mark church property
-                    Aug 2002	Joe G. Zhou dedicated to full-time ministry
-                    Mar 25, 2003	Completed a 3-week pledge campaign, & Purchased the Church property
-                    Sep 7, 2003	1st worship at own church building
-                    Oct 25, 2003	Dedication of the property
-                </Typography>
-            </Paper>
-        </div>
-    )
+export default withStyles(styles)(class extends Component {
+    render() {
+        const { classes } = this.props
+        return (
+            <div className={classes.background}>
+                <Typography variant="display4" align="center" className={classes.title}>Our History</Typography>
+                <Paper className={classes.details}>
+                    <Grid container justify='center'>
+                        <Grid item container direction='column' md={3}>
+                            {['Pre 1987',
+                            '1987-1990',
+                            'Jun 1990',
+                            'Sep 15, 1991',
+                            'Feb 9, 1991',
+                            'May 1991',
+                            'Jan 1993',
+                            'Aug 1997',
+                            'Dec 1997',
+                            '1998-2000',
+                            'Aug 2000',
+                            'Feb 2001',
+                            'May 2002',
+                            'Jul 2002',
+                            'Aug 2002',
+                            'Mar 25, 2003',
+                            'Sep 7, 2003',
+                            'Oct 25, 2003'
+                            ].map(item => {
+                                return(
+                                    <Typography variant="headline" className={classes.text}>{item}</Typography>
+                                )
+                            })}
+                        </Grid>
+                        <Grid item md={7}>
+                            {['ND student fellowship & Elkhart Bible Study Group',
+                            'Chinese student host families in Community Baptist Church',
+                            'Started planning & Bi-weekly prayer meeting to establish MCCC',
+                            'First Monthly worship at Gospel Center, Thanks to Rev. T. Murphy’s support',
+                            'First Baptism',
+                            'Pastor John Chao’s 1st weekly worship',
+                            'Set up the building fund',
+                            'Yamin dedicated to full-time ministry',
+                            'Rev. John Chao left for CCUC',
+                            'Thanks to Rev. Clapper, Banks, Jerome and Indi. CCC for preaching',
+                            'Dustin dedicated to full-time ministry',
+                            'Pastor Andrew Cho joined MCCC',
+                            '10th anniversary and pastor/ elder ordination',
+                            'Scouted the St Mark church property',
+                            'Joe G. Zhou dedicated to full-time ministry',
+                            'Completed a 3-week pledge campaign, & Purchased the Church property',
+                            '1st worship at own church building',
+                            'Dedication of the property'
+                            ].map(item => {
+                                return(
+                                    <Typography variant="headline" className={classes.text}>{item}</Typography>
+                                )
+                            })}
+                        </Grid>
+                    </Grid>
+                </Paper>
+            </div>
+        )
+    }
 })

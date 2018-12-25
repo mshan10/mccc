@@ -36,9 +36,9 @@ export default withStyles(styles)(class extends Component {
         const { classes } = this.props
         return (
             <div className={classes.background}>
-                <Typography variant="display4" align="center" className={classes.title}>Testimonies</Typography>
-                <a href={'http://www.mcccin.org/testimony.shtml'}>
-                    <Typography variant="headline">Click Here for Testimonies</Typography>
+                <Typography variant="display4" align="center" className={classes.title}>Photos</Typography>
+                <a href={'http://www.mcccin.org/gallery.shtml'}>
+                    <Typography variant="headline">Click Here for Photos</Typography>
                 </a>
             </div>
         )
