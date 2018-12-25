@@ -16,7 +16,12 @@ const styles = theme => ({
     },
     carousel: {
         margin: '15px auto',
-        width: '50%',
+        [theme.breakpoints.down('sm')]: {
+            width: '90%'
+        },
+        [theme.breakpoints.up('sm')]: {
+            width: '70%'
+        },
         border: `10px solid ${theme.palette.primary.main}`,
         marginTop: 40,
     },

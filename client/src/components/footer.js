@@ -10,8 +10,8 @@ import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 const styles = theme => ({
     footer: {
         // width: '100wh',
-        height: '45vh',
-        fontFamily: 'Open Sans',
+        // height: '45vh',
+        // fontFamily: 'Open Sans',
     },
     // footerText: {
     //     color: theme.palette.text.primary
@@ -19,7 +19,7 @@ const styles = theme => ({
     info: {
         // padding: '20px 150px',
         backgroundColor: theme.palette.primary.main,
-        height: '35vh'
+        // height: '35vh'
     },
     icon: {
         display: 'inline',
@@ -32,7 +32,7 @@ const styles = theme => ({
         height: '10vh'
     },
     section: {
-        // padding: '30px 150px'
+        padding: '15px 20px'
     },
     headline: {
         color: theme.palette.secondary.main,
@@ -43,7 +43,8 @@ const styles = theme => ({
         color: theme.palette.text.primary,
         letterSpacing: '.5px',
         lineHeight: '30px',
-        fontSize: '15px',
+        fontSize: '12px',
+        textAlign: 'center'
     }
 })
 export default withStyles(styles)(props => {
@@ -86,7 +87,7 @@ export default withStyles(styles)(props => {
                         </Grid>
                 </Grid>
             </Grid>
-            <Grid container className={classes.copyright} item justify="center" alignItems="center">
+            <Grid container className={classes.copyright} item justify="space-around" alignItems="center">
                 <Grid item>
                     <Typography variant="subheading" className={classes.subheading}>© 2018 Michiana Chinese Christian Church, Indiana. </Typography>
                 </Grid>
