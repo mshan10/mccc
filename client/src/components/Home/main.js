@@ -27,9 +27,11 @@ const styles = theme => ({
     },
     title: {
         padding: '30px 40px',
-        border: `10px solid ${theme.palette.secondary.main}`,
+        // border: `10px solid ${theme.palette.secondary.main}`,
+        paddingRight: 600,
         [theme.breakpoints.down('sm')]: {
-            transform: 'scale(.8)'
+            transform: 'scale(.8)',
+            paddingRight: 0,
         }
     }
 })

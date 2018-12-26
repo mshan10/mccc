@@ -76,13 +76,13 @@ export default withStyles(styles)(class extends Component {
                         <MediaQuery minDeviceWidth={1224}>
                             <NavButton
                                 title={"About"}
-                                items={["History", "Deacon Board", "Faith Statement", "Testimonies", "New Members"]}
+                                items={["History", "Deacon Board", "Faith Statement", "Testimonies"]}
                             />
                             <NavButton
                                 title={"Connect"}
-                                items={["Serve", "Photos", "Baptism", "Events"]}
+                                items={["Photos"]}
                             />
-                            <Button variant="contained" className={classes.contactButton}>Contact</Button>
+                            <Button href='http://www.mcccin.org/email.shtml' variant="contained" className={classes.contactButton}>Contact</Button>
                         </MediaQuery>
                         <MediaQuery maxWidth={1224}>
                             <NavButton

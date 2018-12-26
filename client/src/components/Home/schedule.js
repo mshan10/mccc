@@ -3,17 +3,20 @@ import { withStyles } from '@material-ui/core/styles'
 import { Typography, Paper, Grid } from '@material-ui/core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobeAsia, faGlobeAmericas, faChurch } from '@fortawesome/free-solid-svg-icons'
+import LocationIcon from '@material-ui/icons/LocationOn'
 
 const styles = theme => ({
     paper: {
         padding: '30px 20px',
-        margin: '0px 40px',
+        transform: 'scale(.8)',
         '&:hover': {
-            transform: 'scale(1.05, 1.05)',
+            transform: 'scale(.78)',
             cursor: 'pointer'
         },
         transition: '.5s',
-        borderRadius: '0px'
+        borderRadius: '0px',
+        minHeight: 400,
+        minWidth: 315
     },
     section: {
         paddingTop: 20,
@@ -21,7 +24,7 @@ const styles = theme => ({
         fontFamily: 'Open Sans',
     },
     title: {
-        // color: theme.palette.primary.main,
+        color: theme.palette.text.primary,
         textAlign: 'center',
         margin: '20px auto',
         textTransform: 'capitalize',
@@ -34,6 +37,14 @@ const styles = theme => ({
         content: " ",
         width: 150,
         margin: '5px auto',
+    },
+    barSermon: {
+        display: 'block',
+        height: 10,
+        backgroundColor: theme.palette.secondary.main,
+        content: " ",
+        width: 220,
+        margin: '15px auto',
     },
     icon: {
         fontSize: 120,
@@ -72,6 +83,16 @@ const styles = theme => ({
         fontSize: '20px',
         fontWeight: 700,
         color: theme.palette.text.secondary
+    },
+    sermonRecordings: {
+        fontSize: '20px',
+        fontWeight: 700,
+        color: theme.palette.text.secondary,
+        padding: '15px 0',
+        '&:hover': {
+            color: theme.palette.secondary.dark,
+            cursor: 'pointer'
+        },
     }
 })
 
@@ -83,10 +104,13 @@ export default withStyles(styles)(props => {
             <div className={classes.bar}/>
             <Typography variant="headline" align="center">
                 <a className={classes.map} href="https://goo.gl/maps/wVAjBPkX4Fk">
-                    11085 Loughlin Dr  -  Mishawaka, IN 46530
+                    <Grid container alignItems='center' justify='center'>
+                        <LocationIcon />
+                        11085 Loughlin Dr  -  Mishawaka, IN 46530
+                    </Grid>
                 </a>
             </Typography>
-            <Grid container direction="row" className={classes.grid} justify="center" alignItems="center">
+            <Grid container direction="row" className={classes.grid} justify="space-evenly" alignItems="center">
                 <Grid item>
                     <Paper elevation={5} className={classes.paper}>
                         <Grid container item direction="column" alignItems="center">
@@ -132,6 +156,18 @@ export default withStyles(styles)(props => {
                             </Grid>
                             <Typography variant="caption" className={classes.caption}>English   10:00 - 11:00 AM</Typography>
                             <Typography variant="caption" className={classes.caption}>Chinese   11:30 - 12:30 PM</Typography>
+                        </Grid>
+                    </Paper>
+                </Grid>
+                <Grid item>
+                    <Paper elevation={5} className={classes.paper}>
+                        <Grid container item direction="column" alignItems="center" justify="space-evenly">
+                            <Typography variant="caption" className={classes.headline}>Sermon Recordings</Typography>
+                            <div className={classes.barSermon}/>
+                            <Typography variant="caption" className={classes.sermonRecordings}>14 October, 2018</Typography>
+                            <Typography variant="caption" className={classes.sermonRecordings}>07 October, 2018</Typography>
+                            <Typography variant="caption" className={classes.sermonRecordings}>30 September, 2018</Typography>
+                            <Typography variant="caption" className={classes.sermonRecordings}>23 September, 2018</Typography>
                         </Grid>
                     </Paper>
                 </Grid>

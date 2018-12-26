@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
+import { Typography, Paper } from '@material-ui/core'
 // import { Link } from 'react-router-dom';
 import Picture from "../../img/history.png"
 
@@ -37,9 +37,11 @@ export default withStyles(styles)(class extends Component {
         return (
             <div className={classes.background}>
                 <Typography variant="display4" align="center" className={classes.title}>Testimonies</Typography>
-                <a href={'http://www.mcccin.org/testimony.shtml'}>
-                    <Typography variant="headline">Click Here for Testimonies</Typography>
-                </a>
+                <Paper className={classes.details}>
+                    <a href={'http://www.mcccin.org/testimony.shtml'}>
+                        <Typography variant="headline">Click Here for Testimonies</Typography>
+                    </a>
+                </Paper>
             </div>
         )
     }
