@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Typography, Paper } from '@material-ui/core'
-// import { Link } from 'react-router-dom';
 import Picture from "../../img/history.png"
 
 const styles = theme => ({
@@ -12,7 +11,7 @@ const styles = theme => ({
         backgroundAttachment: 'fixed',
     },
     title: {
-        paddingTop: 100,
+        paddingTop: 80,
         color: "#F1F1F2",
         [theme.breakpoints.down('sm')]: {
             fontSize: 50

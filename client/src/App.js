@@ -6,7 +6,9 @@ import DeaconBoard from './components/About/deaconBoard';
 import FaithStatement from './components/About/faithStatement'
 import Testimonies from './components/About/testimonies'
 import NewMembers from './components/About/newMembers'
-import Photos from './components/Connect/photos'
+import Photos from './components/Services/photos'
+import BibleStudies from './components/Services/bibleStudies';
+import YouthGroup from './components/Services/youthGroup';
 import Footer from './components/footer'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -27,7 +29,9 @@ class App extends Component {
                         <Route exact path="/about/faithstatement"><FaithStatement/></Route>
                         <Route exact path="/about/testimonies"><Testimonies/></Route>
                         <Route exact path="/about/newmembers"><NewMembers/></Route>
-                        <Route exact path="/connect/photos"><Photos/></Route>
+                        <Route exact path="/services/photos"><Photos/></Route>
+                        <Route exact path="/services/biblestudies"><BibleStudies/></Route>
+                        <Route exact path="/services/youthgroup"><YouthGroup/></Route>
 
                     </Switch>
                     <Footer />

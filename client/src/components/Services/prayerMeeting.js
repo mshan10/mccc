@@ -11,7 +11,7 @@ const styles = theme => ({
         backgroundAttachment: 'fixed',
     },
     title: {
-        paddingTop: 100,
+        paddingTop: 80,
         color: "#F1F1F2",
         [theme.breakpoints.down('sm')]: {
             fontSize: 50
@@ -35,11 +35,9 @@ export default withStyles(styles)(class extends Component {
         const { classes } = this.props
         return (
             <div className={classes.background}>
-                <Typography variant="display4" align="center" className={classes.title}>Testimonies</Typography>
+                <Typography variant="display4" align="center" className={classes.title}>Photos</Typography>
                 <Paper className={classes.details}>
-                    <a href={'http://www.mcccin.org/testimony.shtml'}>
-                        <Typography variant="headline">Click Here for Testimonies</Typography>
-                    </a>
+
                 </Paper>
             </div>
         )

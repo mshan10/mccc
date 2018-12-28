@@ -59,7 +59,7 @@ export default withStyles(styles)(props => {
                         <Grid item>
                             <Typography variant="subheading" className={classes.subheading}>
                                 <FontAwesomeIcon icon={faPhone} className={classes.icon} />
-                                (574) 574-5744
+                                (574) 256-9422
                             </Typography>
                         </Grid>
                         <Grid item>
@@ -71,7 +71,7 @@ export default withStyles(styles)(props => {
                         <Grid item>
                             <Typography variant="subheading" className={classes.subheading}>
                                 <FontAwesomeIcon icon={faWeixin} className={classes.icon} />
-                                MCCCIN
+                                MCCC
                             </Typography>
                         </Grid>
                 </Grid>
