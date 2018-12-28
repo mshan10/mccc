@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Typography, Paper, Grid } from '@material-ui/core'
 import Picture from "../../img/history.png"
+import Yg from "../../img/yg.jpg"
+
 
 const styles = theme => ({
     background: {
@@ -29,12 +31,15 @@ const styles = theme => ({
         fontSize: 20
     },
     youthimg: {
-        backgroundImage: `url(${Picture})`,
+        backgroundImage: `url(${Yg})`,
         backgroundSize: 'cover',
         height: 500
     },
     youthSchedule: {
         textAlign: 'center',
+        color: theme.palette.secondary.dark
+    },
+    scheduleDetails: {
         color: theme.palette.primary.main
     }
 })
@@ -49,7 +54,7 @@ export default withStyles(styles)(class extends Component {
                     <Grid container justify='space-evenly' alignItems='center'>
                         <Grid item md={5} className={classes.youthimg}>
                         </Grid>
-                        <Grid item container md={5} spacing={20} direction="column">
+                        <Grid item container md={5} spacing={24} direction="column">
                             <Grid item>
                                 <Typography variant="display2" className={classes.youthSchedule}>
                                     Youth Group Meeting Schedule
@@ -61,12 +66,12 @@ export default withStyles(styles)(class extends Component {
                                 return (
                                     <Grid item container direction='row'>
                                         <Grid item md={2} container direction='column'>
-                                            <Typography variant="headline">
+                                            <Typography variant="headline" className={classes.scheduleDetails}>
                                                 {info[0]}:
                                             </Typography>
                                         </Grid>
                                         <Grid item md={10} container direction='column'>
-                                            <Typography variant="headline">
+                                            <Typography variant="headline" className={classes.scheduleDetails}>
                                                 {info[1]}
                                             </Typography>
                                         </Grid>

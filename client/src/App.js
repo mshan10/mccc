@@ -9,6 +9,8 @@ import NewMembers from './components/About/newMembers'
 import Photos from './components/Services/photos'
 import BibleStudies from './components/Services/bibleStudies';
 import YouthGroup from './components/Services/youthGroup';
+import PrayerMeeting from './components/Services/prayerMeeting';
+
 import Footer from './components/footer'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -32,7 +34,7 @@ class App extends Component {
                         <Route exact path="/services/photos"><Photos/></Route>
                         <Route exact path="/services/biblestudies"><BibleStudies/></Route>
                         <Route exact path="/services/youthgroup"><YouthGroup/></Route>
-
+                        <Route exact path="/services/prayerMeeting"><PrayerMeeting/></Route>
                     </Switch>
                     <Footer />
                 </div>

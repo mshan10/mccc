@@ -80,7 +80,7 @@ export default withStyles(styles)(class extends Component {
                             />
                             <NavButton
                                 title={"Services"}
-                                items={["Photos", "Bible Studies", "Youth Group"]}
+                                items={["Photos", "Bible Studies", "Youth Group", "Prayer Meeting"]}
                             />
                             <Button href='http://www.mcccin.org/email.shtml' variant="contained" className={classes.contactButton}>Contact</Button>
                         </MediaQuery>
