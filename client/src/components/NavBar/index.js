@@ -35,9 +35,17 @@ const styles = theme => ({
         color: theme.palette.secondary.main,
         '&:hover': {
             backgroundColor: 'transparent',
-            color: theme.palette.secondary.dark
+            color: theme.palette.secondary.dark,
         },
+
     },
+    link: {
+        color: theme.palette.secondary.main,
+        '&:hover': {
+            color: theme.palette.secondary.dark,
+            textDecoration: 'none',
+        },
+    }
 })
 
 export default withStyles(styles)(class extends Component {
@@ -82,7 +90,9 @@ export default withStyles(styles)(class extends Component {
                                 title={"Services"}
                                 items={["Photos", "Bible Studies", "Youth Group", "Prayer Meeting"]}
                             />
-                            <Button href='http://www.mcccin.org/email.shtml' variant="contained" className={classes.contactButton}>Contact</Button>
+                            <Button variant="contained" className={classes.contactButton}>
+                                <Link to='/contact' className={classes.link}>Contact</Link>
+                            </Button>
                         </MediaQuery>
                         <MediaQuery maxWidth={1224}>
                             <NavButton

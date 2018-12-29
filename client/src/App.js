@@ -10,7 +10,7 @@ import Photos from './components/Services/photos'
 import BibleStudies from './components/Services/bibleStudies';
 import YouthGroup from './components/Services/youthGroup';
 import PrayerMeeting from './components/Services/prayerMeeting';
-
+import Contact from './components/contact';
 import Footer from './components/footer'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -18,7 +18,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // Parse.serverURL = "https://parseapi.back4app.com/";
 
 
-class App extends Component {
+export default class App extends Component {
+
     render() {
         return (
             <BrowserRouter>
@@ -35,6 +36,7 @@ class App extends Component {
                         <Route exact path="/services/biblestudies"><BibleStudies/></Route>
                         <Route exact path="/services/youthgroup"><YouthGroup/></Route>
                         <Route exact path="/services/prayerMeeting"><PrayerMeeting/></Route>
+                        <Route exact path="/contact"><Contact/></Route>
                     </Switch>
                     <Footer />
                 </div>
@@ -42,5 +44,3 @@ class App extends Component {
         );
     }
 }
-
-export default App;
