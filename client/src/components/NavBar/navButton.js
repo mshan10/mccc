@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { withStyles } from '@material-ui/core/styles';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { withStyles } from '@material-ui/core/styles'
 import MenuIcon from '@material-ui/icons/Menu'
 import MediaQuery from 'react-responsive'
 import {
@@ -12,7 +12,7 @@ import {
     ClickAwayListener,
     Paper,
     IconButton
-} from '@material-ui/core';
+} from '@material-ui/core'
 
 const styles = theme => ({
     menuButton: {
@@ -35,36 +35,36 @@ const styles = theme => ({
     dropDownItem: {
         color: '#F1F1F2',
     }
-});
+})
 export default withStyles(styles)(class extends Component {
     state = {
         open: false,
         anchorEl: null,
     }
     handleToggle = () => {
-        this.setState(state => ({ open: !state.open }));
-    };
+        this.setState(state => ({ open: !state.open }))
+    }
 
     handleClose = event => {
         if (this.anchorEl.contains(event.target)) {
-            return;
+            return
         }
-        this.setState({ open: false });
-    };
+        this.setState({ open: false })
+    }
     getLink = (title, item) => {
         let Title = title.toLowerCase()
         let Item = item.toLowerCase().replace(/\s/g, '')
         return (`/${Title}/${Item}`)
-    };
+    }
     render() {
-        const { open } = this.state;
-        const { classes, title, items } = this.props;
+        const { open } = this.state
+        const { classes, title, items } = this.props
         return(
             <div>
                 <MediaQuery minDeviceWidth={1224}>
                     <Button
                         buttonRef={node => {
-                          this.anchorEl = node;
+                          this.anchorEl = node
                         }}
                         aria-owns={open ? 'menu-list-grow' : null}
                         aria-haspopup="true"
@@ -78,7 +78,7 @@ export default withStyles(styles)(class extends Component {
                     <IconButton
                         aria-label="Menu"
                         buttonRef={node => {
-                          this.anchorEl = node;
+                          this.anchorEl = node
                         }}
                         aria-owns={open ? 'menu-list-grow' : null}
                         aria-haspopup="true"

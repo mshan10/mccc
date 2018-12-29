@@ -88,7 +88,7 @@ export default withStyles(styles)(class extends Component {
                             />
                             <NavButton
                                 title={"Services"}
-                                items={["Photos", "Bible Studies", "Youth Group", "Prayer Meeting"]}
+                                items={["Photos", "Bible Studies", "Youth Group", "Prayer Meeting", "Event Calendar", "Sunday School"]}
                             />
                             <Button variant="contained" className={classes.contactButton}>
                                 <Link to='/contact' className={classes.link}>Contact</Link>
