@@ -12,6 +12,7 @@ router.use((req, res, next) => {
 })
 
 router.post('/', jsonParser, (req, res) => {
+    console.log('Here')
     const { name, email, phone, newMember, contact, message } = req.body
     var transporter = nodemailer.createTransport({
         service: "gmail",
